@@ -8,7 +8,7 @@ module.exports = {
         path: path.resolve(__dirname, 'build'),
         filename: 'bundle.js'
     },
-    modules: {
+    module: {
         rules: [
             {
                 test: /\.(sa|sc|c)ss$/,
