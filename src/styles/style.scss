@@ -1,3 +1,39 @@
-body{
-    color: green;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(https://www.vhv.rs/file/max/26/266366_city-skyline-png.png);
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+}
+
+header{
+    height: 50px;
+    background-color: rgba(120, 122, 253, 0.315);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-style: italic;
+}
+
+.city-select {
+    width: 15%;
+    height: 2vw;
+    margin-left: 45%;
+    margin-top: 5%;
+    font-size: 1.3vw;
+    border-radius: 15px;
+    background-color: rgba(120, 122, 253, 0.315);
+    display: flex;
+    align-self: center;
+    option{
+        font-size: 1.3vw;
+        border-radius: 15px;
+    }
 }
