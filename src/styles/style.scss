@@ -16,10 +16,24 @@ header{
     height: 50px;
     background-color: rgba(120, 122, 253, 0.315);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    font-size: 24px;
-    font-style: italic;
+    p{
+        padding-left: 20px;
+        font-style: italic;
+        font-size: 24px;
+    }
+    nav {
+        display: flex;
+        flex-flow: row nowrap;
+        a{
+            padding: 0 10px;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    }
 }
 
 .city-select {

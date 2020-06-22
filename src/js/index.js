@@ -11,8 +11,6 @@ currentDate.innerText = new Date();
 
 function createDropdown() {
     let select = document.createElement('select');
-    select.addEventListener('change', changeBackground)
-
     let target = document.querySelector('.locations');
 
     select.setAttribute('name', 'city');
@@ -27,6 +25,8 @@ function createDropdown() {
         select.append(option);
     }
 
+    select.addEventListener('change', changeBackground)
+
     target.append(select);    
 }
 
@@ -36,12 +36,11 @@ function changeBackground(event){
     let cityImage = cities[cityKey].url
 
     //if(myStorage === []){
-        document.body.style.backgroundImage = `url(${cityImage})`;
+    document.body.style.backgroundImage = `url(${cityImage})`;
     //} else {
     //     myStorage = getCityFromLocalStorage()
     //     document.body.style.backgroundImage = `url(${myStorage.url})`;
     // }
-    
 
     myStorage.push({
         url: cities[cityKey].url,
