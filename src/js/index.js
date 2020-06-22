@@ -1,24 +1,18 @@
 import "../styles/style.scss"
 import { cities } from "./cityKeys.js"
 import { fetchWeatherApi } from "./api.js"
+import { getCityFromLocalStorage } from "./localStorage.js"
+import { setCityToLocalStorage } from "./localStorage.js"
 
-let currentDate = document.getElementById('date');
 let myStorage = getCityFromLocalStorage();
 
-    myStorage === null ? myStorage = [] : myStorage;
-
-    function getCityFromLocalStorage() {
-        return JSON.parse(localStorage.getItem('city'));
-    };
-
-    function setCityToLocalStorage(city) {
-        localStorage.setItem('city', JSON.stringify(city))
-    };
-
+let currentDate = document.getElementById('date');
 currentDate.innerText = new Date();
 
-function createDropdown(city) {
+function createDropdown() {
     let select = document.createElement('select');
+    select.addEventListener('change', changeBackground)
+
     let target = document.querySelector('.locations');
 
     select.setAttribute('name', 'city');
@@ -33,21 +27,24 @@ function createDropdown(city) {
         select.append(option);
     }
 
-    select.addEventListener('change', changeBackground)
-    
-    
-    target.append(select);
-    
+    target.append(select);    
 }
 
 function changeBackground(event){
+    myStorage = [];
     let cityKey = event.target.value;
     let cityImage = cities[cityKey].url
 
-    document.body.style.backgroundImage = `url(${cityImage})`
+    //if(myStorage === []){
+        document.body.style.backgroundImage = `url(${cityImage})`;
+    //} else {
+    //     myStorage = getCityFromLocalStorage()
+    //     document.body.style.backgroundImage = `url(${myStorage.url})`;
+    // }
+    
 
     myStorage.push({
-        id: cities[cityKey].name,
+        url: cities[cityKey].url,
         text: cities[cityKey].name,
     });
     setCityToLocalStorage(myStorage);
