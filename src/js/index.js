@@ -23,6 +23,11 @@ function createDropdown() {
         option.innerText = cities[city].name;
         option.setAttribute('id', cities[city].name)
         select.append(option);
+
+        // if(myStorage.text){
+        //     document.body.style.backgroundImage = `url(${myStorage.url})`;
+        // }
+
     }
 
     select.addEventListener('change', changeBackground)
@@ -31,16 +36,14 @@ function createDropdown() {
 
 function changeBackground(event){
     myStorage = [];
+
     let cityKey = event.target.value;
-    let cityImage = cities[cityKey].url
-
-    //if(myStorage === []){
+    let cityImage = cities[cityKey].url    
     document.body.style.backgroundImage = `url(${cityImage})`;
-    //} else {
-    //     myStorage = getCityFromLocalStorage()
+    
+    // if(myStorage){
     //     document.body.style.backgroundImage = `url(${myStorage.url})`;
-    // }
-
+    // } 
     myStorage.push({
         url: cities[cityKey].url,
         text: cities[cityKey].name,
@@ -50,17 +53,10 @@ function changeBackground(event){
 
 createDropdown()
 
-
-
-
-let headerNav = document.getElementById('header-nav');
 let homeBtn = document.getElementById('home');
 let aboutBtn = document.getElementById('about');
 let contactBtn = document.getElementById('contact');
-let test = document.getElementById('test');
-
-
-// headerNav.addEventListener('click', buttonChange )
+let headTitle = document.getElementById('title');
 
 homeBtn.onclick = buttonChange(homeBtn);
 aboutBtn.onclick = buttonChange(aboutBtn);
@@ -68,7 +64,7 @@ contactBtn.onclick = buttonChange(contactBtn);
 
 function buttonChange(mainButton){
 
-    if(test.innerText === mainButton.id){
+    if(headTitle.innerText === mainButton.id){
         mainButton.style.color = 'rgba(0, 0, 255, 0.548)';
         mainButton.style.backgroundColor = 'rgba(153, 155, 255, 0.418)';
         mainButton.style.fontWeight = 'bold';
