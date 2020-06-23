@@ -5,6 +5,8 @@ import { getCityFromLocalStorage } from "./localStorage.js"
 import { setCityToLocalStorage } from "./localStorage.js"
 import { buttonChange } from "./navMenu.js"
 
+fetchWeatherApi()
+
 let myStorage = getCityFromLocalStorage();
 
 let currentDate = document.getElementById('date');
@@ -14,13 +16,13 @@ currentDate.innerText = new Date();
 
 function createPage() {
     createDropdown();
-    createInfoDiv();
-    buttonChange();
+    // createInfoDiv();
+    buttonChange;
 };
 
-function createInfoDiv() {
-    console.log("test")
-}
+// function createInfoDiv() {
+//     console.log("test")
+// }
 
 function createDropdown() {
     let select = document.createElement('select');
