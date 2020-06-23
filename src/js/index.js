@@ -26,7 +26,6 @@ function createDropdown() {
     }
 
     select.addEventListener('change', changeBackground)
-
     target.append(select);    
 }
 
@@ -50,3 +49,29 @@ function changeBackground(event){
 }
 
 createDropdown()
+
+
+
+
+let headerNav = document.getElementById('header-nav');
+let homeBtn = document.getElementById('home');
+let aboutBtn = document.getElementById('about');
+let contactBtn = document.getElementById('contact');
+let test = document.getElementById('test');
+
+
+// headerNav.addEventListener('click', buttonChange )
+
+homeBtn.onclick = buttonChange(homeBtn);
+aboutBtn.onclick = buttonChange(aboutBtn);
+contactBtn.onclick = buttonChange(contactBtn);
+
+function buttonChange(mainButton){
+
+    if(test.innerText === mainButton.id){
+        mainButton.style.color = 'rgba(0, 0, 255, 0.548)';
+        mainButton.style.backgroundColor = 'rgba(153, 155, 255, 0.418)';
+        mainButton.style.fontWeight = 'bold';
+    }
+    
+}
