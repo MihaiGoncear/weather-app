@@ -23,8 +23,4 @@ export const cities =  {
       url: "https://imgix.bustle.com/uploads/shutterstock/2019/9/19/a49124d9-5f62-47a5-b5ec-8dd3a3066b30-shutterstock-1420728554.jpg?w=970&h=546&fit=crop&crop=faces&auto=format&q=70&dpr=2",
       name: "Paris"
     },
-    stauceni: {
-      url:"https://www.axaimobil.md/upload/foto/24252721.jpg",
-      name: "Stauceni"
-    },
   }

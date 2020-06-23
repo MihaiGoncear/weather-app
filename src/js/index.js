@@ -3,11 +3,24 @@ import { cities } from "./cityKeys.js"
 import { fetchWeatherApi } from "./api.js"
 import { getCityFromLocalStorage } from "./localStorage.js"
 import { setCityToLocalStorage } from "./localStorage.js"
+import { buttonChange } from "./navMenu.js"
 
 let myStorage = getCityFromLocalStorage();
 
 let currentDate = document.getElementById('date');
 currentDate.innerText = new Date();
+
+
+
+function createPage() {
+    createDropdown();
+    createInfoDiv();
+    buttonChange();
+};
+
+function createInfoDiv() {
+    console.log("test")
+}
 
 function createDropdown() {
     let select = document.createElement('select');
@@ -51,23 +64,4 @@ function changeBackground(event){
     setCityToLocalStorage(myStorage);
 }
 
-createDropdown()
-
-let homeBtn = document.getElementById('home');
-let aboutBtn = document.getElementById('about');
-let contactBtn = document.getElementById('contact');
-let headTitle = document.getElementById('title');
-
-homeBtn.onclick = buttonChange(homeBtn);
-aboutBtn.onclick = buttonChange(aboutBtn);
-contactBtn.onclick = buttonChange(contactBtn);
-
-function buttonChange(mainButton){
-
-    if(headTitle.innerText === mainButton.id){
-        mainButton.style.color = 'rgba(0, 0, 255, 0.548)';
-        mainButton.style.backgroundColor = 'rgba(153, 155, 255, 0.418)';
-        mainButton.style.fontWeight = 'bold';
-    }
-    
-}
+createPage();
