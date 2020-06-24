@@ -31,9 +31,10 @@ function createDropdown() {
 
     for(const city in cities) {
         let option = document.createElement('option');
-        option.setAttribute('value', city)
+        option.setAttribute('value', city);
         option.innerText = cities[city].name;
-        option.setAttribute('id', cities[city].id)
+        option.setAttribute('id', cities[city].id);
+        option.setAttribute('class', 'test');
         select.append(option);
     }
 
@@ -45,14 +46,10 @@ function createDropdown() {
 function addTempContent(event){
     let cityKey = event.target.value;
     let cityImage = cities[cityKey].url   
-    let cityId = cities[cityKey].id
+    let cityId = cities[cityKey].id;
 
     let removeOption = document.getElementById(cityId)
-
-    if(removeOption){
-        removeOption.style.display = 'none'
-    }
-    
+    removeOption.style.display = 'none'
 
     document.body.style.backgroundImage = `url(${cityImage})`;
         
