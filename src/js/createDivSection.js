@@ -25,7 +25,7 @@ export function createDivSection(info) {
 
         if(item === 'feels_like'){
             weatherTableDataFirst.innerText = 'Feels like:';
-            weatherTableDataSecond.innerHTML = `${info.main.feels_like}<sup>°C</sup>`;
+            weatherTableDataSecond.innerHTML = `${Math.floor(info.main.feels_like)}<sup>°C</sup>`;
         } else if(item === 'humidity') {
             weatherTableDataFirst.innerText = 'Humidity:';
             weatherTableDataSecond.innerText = `${info.main.humidity}%`;
@@ -34,13 +34,13 @@ export function createDivSection(info) {
             weatherTableDataSecond.innerText = `${info.main.pressure} P`;
         } else if (item === 'temp') {
             weatherTableDataFirst.innerText = 'Temperature:';
-            weatherTableDataSecond.innerHTML = `${info.main.temp}<sup>°C</sup>`;
+            weatherTableDataSecond.innerHTML = `${Math.floor(info.main.temp)}<sup>°C</sup>`;
         } else if (item === 'temp_max') {
             weatherTableDataFirst.innerText = 'Max.temperature:';
-            weatherTableDataSecond.innerHTML = `${info.main.temp_max}<sup>°C</sup>`;
+            weatherTableDataSecond.innerHTML = `${Math.floor(info.main.temp_max)}<sup>°C</sup>`;
         } else if (item === 'temp_min') {
             weatherTableDataFirst.innerText = 'Min. temperature:';
-            weatherTableDataSecond.innerHTML = `${info.main.temp_min}<sup>°C</sup>`;
+            weatherTableDataSecond.innerHTML = `${Math.floor(info.main.temp_min)}<sup>°C</sup>`;
         }
 
         weatherTableRow.append(weatherTableDataFirst);
