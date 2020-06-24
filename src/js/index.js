@@ -42,15 +42,10 @@ function createDropdown() {
 }
 
 function changeBackground(event){
-    let mainDiv = document.getElementById('main__div');
-
     let cityKey = event.target.value;
     let cityImage = cities[cityKey].url    
-    document.body.style.backgroundImage = `url(${cityImage})`;
 
-    if(mainDiv){
-        mainTag.removeChild(mainDiv)
-    }
+    document.body.style.backgroundImage = `url(${cityImage})`;
 
     fetchWeatherApi(cities[cityKey].name);
 }
