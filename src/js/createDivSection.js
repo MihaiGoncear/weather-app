@@ -49,8 +49,6 @@ export function createDivSection(info) {
         weatherTable.append(weatherTableRow);
     }
 
-
-
     weatherImgDiv.append(weatherImg);
     weatherTableDiv.append(weatherTable);
 
@@ -58,8 +56,4 @@ export function createDivSection(info) {
     mainDiv.append(weatherTableDiv);
 
     mainTag.append(mainDiv);
-    
-
-
-    console.log(info)
 }

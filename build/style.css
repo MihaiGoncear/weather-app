@@ -11,7 +11,7 @@ body {
 
 header {
   height: 50px;
-  background-color: rgba(120, 122, 253, 0.315);
+  background-color: rgba(120, 122, 253, 0.5);
   display: flex;
   justify-content: space-between;
   align-items: center; }
@@ -48,7 +48,7 @@ header {
   margin: 5% 0;
   font-size: 1.3vw;
   border-radius: 15px;
-  background-color: rgba(120, 122, 253, 0.315); }
+  background-color: rgba(120, 122, 253, 0.5); }
   .city-select option {
     font-size: 1.3vw;
     border-radius: 15px; }

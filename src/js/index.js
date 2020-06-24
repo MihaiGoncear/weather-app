@@ -5,9 +5,10 @@ import { fetchWeatherApi } from "./api.js"
 // import { setCityToLocalStorage } from "./localStorage.js"
 import { headTitle } from "./navMenu.js"
 import { mainTag } from "./createDivSection.js"
+import { dateFormator } from "./dateFormator.js"
 
 let currentDate = document.getElementById('date');
-currentDate.innerText = new Date();
+currentDate.innerText = dateFormator();
 
 document.onload = createPage();
 
@@ -32,18 +33,26 @@ function createDropdown() {
         let option = document.createElement('option');
         option.setAttribute('value', city)
         option.innerText = cities[city].name;
-        option.setAttribute('id', cities[city].name)
+        option.setAttribute('id', cities[city].id)
         select.append(option);
     }
 
-    select.addEventListener('change', changeBackground)
+    select.addEventListener('change', addTempContent)
     
     target.append(select);    
 }
 
-function changeBackground(event){
+function addTempContent(event){
     let cityKey = event.target.value;
     let cityImage = cities[cityKey].url   
+    let cityId = cities[cityKey].id
+
+    let removeOption = document.getElementById(cityId)
+
+    if(removeOption){
+        removeOption.style.display = 'none'
+    }
+    
 
     document.body.style.backgroundImage = `url(${cityImage})`;
         
@@ -52,7 +61,7 @@ function changeBackground(event){
     if(mainDiv){
         mainTag.removeChild(mainDiv)
     }
-    
+    currentDate.innerText = dateFormator();
     fetchWeatherApi(cities[cityKey].name);
 }
 
