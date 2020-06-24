@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  background-image: url(https://www.vhv.rs/file/max/26/266366_city-skyline-png.png);
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed; }
+
+header {
+  height: 50px;
+  background-color: rgba(120, 122, 253, 0.315);
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  header p {
+    padding-left: 20px;
+    font-style: italic;
+    font-size: 24px; }
+  header nav {
+    display: flex;
+    flex-flow: row nowrap; }
+    header nav a {
+      padding: 5px 10px;
+      text-decoration: none;
+      color: black;
+      font-size: 18px;
+      border-radius: 15px;
+      width: 7vw;
+      text-align: center; }
+      header nav a:hover {
+        color: #ff7979;
+        background-color: rgba(255, 153, 153, 0.418);
+        border-radius: 15px;
+        font-weight: bold; }
+
+.locations {
+  display: flex;
+  justify-content: center;
+  flex-flow: column wrap;
+  align-items: center; }
+
+.city-select {
+  width: 15%;
+  height: 2vw;
+  margin: 10% 0;
+  font-size: 1.3vw;
+  border-radius: 15px;
+  background-color: rgba(120, 122, 253, 0.315); }
+  .city-select option {
+    font-size: 1.3vw;
+    border-radius: 15px; }
+
+.main__div {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  flex-flow: column wrap;
+  align-items: center;
+  background-color: rgba(120, 122, 253, 0.315);
+  border: 1px solid black; }
+
+.weather__img {
+  width: 5vw;
+  height: 5vw; }
+
+.weather__table-div {
+  display: flex;
+  justify-content: center;
+  font-size: 1.6vw;
+  margin-bottom: 10%;
+  width: 100%; }
+  .weather__table-div table {
+    background-color: #787afd;
+    border-radius: 15px; }
+    .weather__table-div table tr :nth-child(1) {
+      text-align: right;
+      width: 60%;
+      padding-right: 5%; }
+    .weather__table-div table tr :nth-child(2) {
+      width: 30%;
+      padding-left: 5%; }
+
