@@ -35,8 +35,8 @@ module.exports = {
             template: '!!ejs-webpack-loader!./index.ejs'
        }),
         new HtmlWebpackPlugin({
-            filename: 'about.html',
-            template: '!!ejs-webpack-loader!./about.ejs'
+            filename: 'list.html',
+            template: '!!ejs-webpack-loader!./list.ejs'
         }),
         new HtmlWebpackPlugin({
             filename: 'contacts.html',
