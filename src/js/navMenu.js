@@ -1,7 +1,7 @@
 let homeBtn = document.getElementById('home');
 let aboutBtn = document.getElementById('about');
 let contactBtn = document.getElementById('contact');
-let headTitle = document.getElementById('title');
+export let headTitle = document.getElementById('title');
 
 homeBtn.onclick = buttonChange(homeBtn);
 aboutBtn.onclick = buttonChange(aboutBtn);

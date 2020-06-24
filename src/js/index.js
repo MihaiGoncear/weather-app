@@ -1,21 +1,24 @@
 import "../styles/style.scss"
 import { cities } from "./cityKeys.js"
 import { fetchWeatherApi } from "./api.js"
-import { getCityFromLocalStorage } from "./localStorage.js"
-import { setCityToLocalStorage } from "./localStorage.js"
-import { buttonChange } from "./navMenu.js"
+// import { getCityFromLocalStorage } from "./localStorage.js"
+// import { setCityToLocalStorage } from "./localStorage.js"
+import { headTitle } from "./navMenu.js"
 
-let myStorage = getCityFromLocalStorage();
 let mainTag = document.getElementById('locations')
 
 let currentDate = document.getElementById('date');
 currentDate.innerText = new Date();
 
+document.onload = createPage();
+
 function createPage() {
-    createDropdown();
-    // createInfoDiv();
-    buttonChange;
-};
+    if(headTitle.dataset.name === 'home') {
+        createDropdown()
+    }else{
+        return;
+    }
+}
 
 function createDropdown() {
     let select = document.createElement('select');
@@ -31,11 +34,6 @@ function createDropdown() {
         option.innerText = cities[city].name;
         option.setAttribute('id', cities[city].name)
         select.append(option);
-
-        // if(myStorage.text){
-        //     document.body.style.backgroundImage = `url(${myStorage.url})`;
-        // }
-
     }
 
     select.addEventListener('change', changeBackground)
@@ -44,7 +42,6 @@ function createDropdown() {
 }
 
 function changeBackground(event){
-    myStorage = [];
     let mainDiv = document.getElementById('main__div');
 
     let cityKey = event.target.value;
@@ -56,19 +53,6 @@ function changeBackground(event){
     }
 
     fetchWeatherApi(cities[cityKey].name);
-
-    // if(myStorage){
-    //     document.body.style.backgroundImage = `url(${myStorage.url})`;
-    // } 
-    myStorage.push({
-        url: cities[cityKey].url,
-        text: cities[cityKey].name,
-        id: cities[cityKey].id,
-    });
-    setCityToLocalStorage(myStorage);
-    
 }
-
-createPage();
 
 
