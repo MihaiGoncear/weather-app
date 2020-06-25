@@ -63,6 +63,7 @@ function addTempContent(event){
         mainTag.removeChild(mainDiv)
     }
     currentDate.innerText = dateFormator();
+    fetchWeatherApi(cities[cityKey].name);
 }
 
 
