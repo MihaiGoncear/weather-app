@@ -6,6 +6,7 @@ import { fetchWeatherApi } from "./api.js"
 import { headTitle } from "./navMenu.js"
 import { mainTag } from "./createDivSection.js"
 import { dateFormator } from "./dateFormator.js"
+import { createListDiv } from "./listDiv.js"
 
 let currentDate = document.getElementById('date');
 currentDate.innerText = dateFormator();
@@ -14,9 +15,12 @@ document.onload = createPage();
 
 function createPage() {
     if(headTitle.dataset.name === 'home') {
-        createDropdown()
+        createDropdown();
         document.body.style.backgroundImage = "url(https://www.vhv.rs/file/max/26/266366_city-skyline-png.png)";
-    }else{
+    } else if(headTitle.dataset.name === 'about'){
+        document.body.style.backgroundImage = "url(https://thewallpaper.co//wp-content/uploads/2016/10preview/free-weather-background-hd-wallpapers-windows-apple-amazing-4k-samsung-wallpapers-free-download-1920x1080.jpg)";
+        createListDiv();
+    } else {
         return;
     }
 }
@@ -59,7 +63,6 @@ function addTempContent(event){
         mainTag.removeChild(mainDiv)
     }
     currentDate.innerText = dateFormator();
-    fetchWeatherApi(cities[cityKey].name);
 }
 
 
