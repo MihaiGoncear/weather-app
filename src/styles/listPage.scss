@@ -1,5 +1,5 @@
 .list__main{
-    margin-top: 10%;
+    margin: 10% 0;
     display: flex;
     justify-content: center;
     flex-flow: column nowrap;
@@ -16,11 +16,13 @@
             tr{
                 background-color: rgb(149, 186, 255);
                 font-size: 1.7vw;
+                font-family: 'Roboto Slab', serif;
+                color: rgb(19, 19, 80);
                 &{ 
                     :nth-child(1){
+                        color: rgb(19, 19, 80);
                         text-align: left;
                         width: 25%;
-                        font-family: 'Roboto Slab', serif;
                         font-weight: bold;
                         padding: 0.5vw 2%;
                     }

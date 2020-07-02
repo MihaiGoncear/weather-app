@@ -99,7 +99,7 @@ header {
           font-family: 'Notable', sans-serif; }
 
 .list__main {
-  margin-top: 10%;
+  margin: 10% 0;
   display: flex;
   justify-content: center;
   flex-flow: column nowrap; }
@@ -114,11 +114,13 @@ header {
       border-collapse: collapse; }
       .list__main .list__div .city__table tr {
         background-color: #95baff;
-        font-size: 1.7vw; }
+        font-size: 1.7vw;
+        font-family: 'Roboto Slab', serif;
+        color: #131350; }
         .list__main .list__div .city__table tr :nth-child(1) {
+          color: #131350;
           text-align: left;
           width: 25%;
-          font-family: 'Roboto Slab', serif;
           font-weight: bold;
           padding: 0.5vw 2%; }
         .list__main .list__div .city__table tr :nth-child(2) {
