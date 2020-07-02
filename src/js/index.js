@@ -50,10 +50,6 @@ function createDropdown() {
 function addTempContent(event){
     let cityKey = event.target.value;
     let cityImage = cities[cityKey].url   
-    let cityId = cities[cityKey].id;
-
-    let removeOption = document.getElementById(cityId)
-    removeOption.style.display = 'none'
 
     document.body.style.backgroundImage = `url(${cityImage})`;
         
@@ -62,6 +58,7 @@ function addTempContent(event){
     if(mainDiv){
         mainTag.removeChild(mainDiv)
     }
+    
     currentDate.innerText = dateFormator();
     fetchWeatherApi(cities[cityKey].name);
 }

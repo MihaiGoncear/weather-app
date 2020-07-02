@@ -1,0 +1,48 @@
+.list__main{
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    flex-flow: column nowrap;
+    .list__div {
+        display: flex;
+        justify-content: center;
+        .city__table {
+            width: 30%;
+            background-color: rgba(149, 186, 255, 0.5);
+            border: rgba(0, 76, 216, 0.801) 3px solid;
+            border-radius: 15%;
+            border-collapse: collapse;
+            
+            tr{
+                background-color: rgb(149, 186, 255);
+                font-size: 1.7vw;
+                &{ 
+                    :nth-child(1){
+                        text-align: left;
+                        width: 25%;
+                        font-family: 'Roboto Slab', serif;
+                        font-weight: bold;
+                        padding: 0.5vw 2%;
+                    }
+                    :nth-child(2){
+                        text-align: center;
+                        width: 25%;
+                        padding: 0.5vw 2%;
+                        sup{
+                            font-weight: normal;
+                        }
+                    }
+                    :nth-child(3){
+                        text-align: right;
+                        width: 25%;
+                        padding: 0.5vw 2%;
+                        img{
+                            width: 4vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+   
