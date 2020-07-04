@@ -16,9 +16,11 @@ export function forecastRenderPage(info) {
     weatherTableDataThirdImg.setAttribute('src', `http://openweathermap.org/img/w/${info.weather[0].icon}.png`)
     weatherTableDataThirdImg.setAttribute('alt', info.weather[0].description)
     
-    firstListItem.innerText = info.dt_txt
+    let dateString = info.dt_txt
+
+    firstListItem.innerText = dateString.substr(8, 2);
     secondListItem.append(weatherTableDataThirdImg) 
-    thirdListItem.innerText = info.main.temp
+    thirdListItem.innerHTML = `${Math.floor(info.main.temp)}<sup>°C</sup>`;
 
     forecastDiv.append(firstListItem)
     forecastDiv.append(secondListItem)
