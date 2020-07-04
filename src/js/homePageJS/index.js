@@ -2,6 +2,8 @@ import { cities } from "../commonJS/cityKeys.js"
 import { fetchWeatherApi } from "../apiJS/api.js"
 import { getCityFromLocalStorage } from "../localStorageJS/localStorage.js"
 import { setCityToLocalStorage } from "../localStorageJS/localStorage.js"
+import { dateFormator } from "../commonJS/dateFormator.js"
+
 
 let mainTag = document.getElementById('locations');
 
@@ -12,7 +14,7 @@ const myStorage = getCityFromLocalStorage();
 function createDropdown() {
     let select = document.createElement('select');
     let target = document.querySelector('.locations');
-    document.body.style.backgroundImage = "url(https://www.vhv.rs/file/max/26/266366_city-skyline-png.png)"
+    document.body.style.backgroundImage = "url(./images/home-bg.png)"
     if(!target) return
 
     select.setAttribute('name', 'city');
@@ -34,6 +36,7 @@ function createDropdown() {
 }
 
 function renderHomeTempContent(event){
+    let currentDate = document.getElementById('date');
     let cityKey = event.target.value;
     addHomePageContent(cityKey)
     currentDate.innerText = dateFormator();

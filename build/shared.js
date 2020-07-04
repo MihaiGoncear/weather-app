@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "b294e9791c5a69c210e1";
+/******/ 	var hotCurrentHash = "e9529f36b8f326b7de09";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1492,7 +1492,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"headTitle\", function() { return headTitle; });\n/* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../styles/style.scss */ \"./src/styles/style.scss\");\n/* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_style_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _commonJS_dateFormator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../commonJS/dateFormator.js */ \"./src/js/commonJS/dateFormator.js\");\n\r\n\r\n\r\nlet currentDate = document.getElementById('date');\r\ncurrentDate.innerText = Object(_commonJS_dateFormator_js__WEBPACK_IMPORTED_MODULE_1__[\"dateFormator\"])();\r\n\r\nlet homeBtn = document.getElementById('home');\r\nlet listBtn = document.getElementById('list');\r\nlet contactBtn = document.getElementById('contact');\r\nlet forecastBtn = document.getElementById('forecast');\r\nlet headTitle = document.getElementById('title');\r\n\r\nhomeBtn.onclick = buttonChange(homeBtn);\r\nlistBtn.onclick = buttonChange(listBtn);\r\ncontactBtn.onclick = buttonChange(contactBtn);\r\nforecastBtn.onclick = buttonChange(forecastBtn);\r\n\r\nfunction buttonChange(mainButton){\r\n\r\n    if(headTitle.dataset.name === mainButton.id){\r\n        mainButton.style.color = 'rgba(0, 0, 255, 0.548)';\r\n        mainButton.style.backgroundColor = 'rgba(153, 155, 255, 0.418)';\r\n        mainButton.style.fontWeight = 'bold';\r\n    }\r\n}\n\n//# sourceURL=webpack:///./src/js/commonJS/styles.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"headTitle\", function() { return headTitle; });\n/* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../styles/style.scss */ \"./src/styles/style.scss\");\n/* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_style_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _dateFormator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dateFormator.js */ \"./src/js/commonJS/dateFormator.js\");\n\r\n\r\n\r\nlet currentDate = document.getElementById('date');\r\ncurrentDate.innerText = Object(_dateFormator_js__WEBPACK_IMPORTED_MODULE_1__[\"dateFormator\"])();\r\n\r\nlet homeBtn = document.getElementById('home');\r\nlet listBtn = document.getElementById('list');\r\nlet contactBtn = document.getElementById('contact');\r\nlet forecastBtn = document.getElementById('forecast');\r\nlet headTitle = document.getElementById('title');\r\n\r\nhomeBtn.onclick = buttonChange(homeBtn);\r\nlistBtn.onclick = buttonChange(listBtn);\r\ncontactBtn.onclick = buttonChange(contactBtn);\r\nforecastBtn.onclick = buttonChange(forecastBtn);\r\n\r\nfunction buttonChange(mainButton){\r\n\r\n    if(headTitle.dataset.name === mainButton.id){\r\n        mainButton.style.color = 'rgba(0, 0, 255, 0.548)';\r\n        mainButton.style.backgroundColor = 'rgba(153, 155, 255, 0.418)';\r\n        mainButton.style.fontWeight = 'bold';\r\n    }\r\n}\n\n//# sourceURL=webpack:///./src/js/commonJS/styles.js?");
 
 /***/ }),
 
@@ -1503,7 +1503,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// extracted by mini-css-extract-plugin\n    if(true) {\n      // 1593880575968\n      var cssReload = __webpack_require__(/*! ../../node_modules/css-hot-loader/hotModuleReplacement.js */ \"./node_modules/css-hot-loader/hotModuleReplacement.js\")(module.i, {\"fileMap\":\"{fileName}\"});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);;\n    }\n  \n\n//# sourceURL=webpack:///./src/styles/style.scss?");
+eval("// extracted by mini-css-extract-plugin\n    if(true) {\n      // 1593882486329\n      var cssReload = __webpack_require__(/*! ../../node_modules/css-hot-loader/hotModuleReplacement.js */ \"./node_modules/css-hot-loader/hotModuleReplacement.js\")(module.i, {\"fileMap\":\"{fileName}\"});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);;\n    }\n  \n\n//# sourceURL=webpack:///./src/styles/style.scss?");
 
 /***/ }),
 

@@ -1,4 +1,5 @@
 export function createDivSection(info) {
+    console.log(info)
     let mainTag = document.getElementById('locations');
     let mainDiv = document.createElement('div');
     mainDiv.setAttribute('id','main__div');
@@ -9,6 +10,7 @@ export function createDivSection(info) {
 
     let weatherImg = document.createElement('img');
     weatherImg.setAttribute('src', `http://openweathermap.org/img/w/${info.weather[0].icon}.png`);
+    weatherImg.setAttribute('alt', info.weather[0].description)
     weatherImg.classList.add('weather__img');
 
     let weatherTableDiv = document.createElement('div');

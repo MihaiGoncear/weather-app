@@ -1,5 +1,5 @@
 import "../../styles/style.scss"
-import { dateFormator } from "../commonJS/dateFormator.js"
+import { dateFormator } from "./dateFormator.js"
 
 let currentDate = document.getElementById('date');
 currentDate.innerText = dateFormator();

@@ -18,11 +18,12 @@ export function listDivViaApi(info) {
     let weatherTableDataSecond = document.createElement('td');
     let weatherTableDataThird = document.createElement('td');
     
-    let myStorage = getCityFromLocalStorage();
-    let storageCity = cities[myStorage].name
+    // let myStorage = getCityFromLocalStorage();
+    // let storageCity = cities[myStorage].name
 
     let weatherTableDataThirdImg = document.createElement('img');
     weatherTableDataThirdImg.setAttribute('src', `http://openweathermap.org/img/w/${info.weather[0].icon}.png`)
+    weatherTableDataThirdImg.setAttribute('alt', info.weather[0].description)
 
     // let myStorage = getCityFromLocalStorage();
     // let storageCity = cities[myStorage].name

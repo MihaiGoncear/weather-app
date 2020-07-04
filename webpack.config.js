@@ -2,6 +2,8 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+
 module.exports = {
     entry:  {
         index: './src/js/homePageJS/index.js',
@@ -36,25 +38,30 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: 'style.css'
         }), 
+        new CopyPlugin ({
+            patterns: [
+                {from: './src/images', to: 'images'}
+            ]
+        }),
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: '!!ejs-webpack-loader!./index.ejs',
-            chunks: ['index','shared']
-       }),
+            chunks: ['shared', 'index']
+        }),
         new HtmlWebpackPlugin({
             filename: 'list.html',
             template: '!!ejs-webpack-loader!./list.ejs',
-            chunks: ['list','shared']
+            chunks: ['shared', 'list']
         }),
         new HtmlWebpackPlugin({
             filename: 'contacts.html',
             template: '!!ejs-webpack-loader!./contacts.ejs',
-            chunks: ['contacts','shared']
+            chunks: ['shared', 'contacts']
         }),
         new HtmlWebpackPlugin({
             filename: 'forecast.html',
             template: '!!ejs-webpack-loader!./forecast.ejs',
-            chunks: ['forecast','shared']
+            chunks: ['shared', 'forecast']
         })
     ],
     devServer: {
