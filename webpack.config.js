@@ -3,10 +3,16 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
-    entry: './src/js/homePageJS/index.js',
+    entry:  {
+        index: './src/js/homePageJS/index.js',
+        list: './src/js/listPageJS/listDiv.js',
+        forecast: './src/js/forecastJS/forecast.js',
+        contacts: './src/js/contactsJS/contacts.js',
+        shared: './src/js/commonJS/styles.js'
+    },
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'bundle.js'
+        filename: '[name].js'
     },
     module: {
         rules: [
@@ -32,19 +38,23 @@ module.exports = {
         }), 
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: '!!ejs-webpack-loader!./index.ejs'
+            template: '!!ejs-webpack-loader!./index.ejs',
+            chunks: ['index','shared']
        }),
         new HtmlWebpackPlugin({
             filename: 'list.html',
-            template: '!!ejs-webpack-loader!./list.ejs'
+            template: '!!ejs-webpack-loader!./list.ejs',
+            chunks: ['list','shared']
         }),
         new HtmlWebpackPlugin({
             filename: 'contacts.html',
-            template: '!!ejs-webpack-loader!./contacts.ejs'
+            template: '!!ejs-webpack-loader!./contacts.ejs',
+            chunks: ['contacts','shared']
         }),
         new HtmlWebpackPlugin({
             filename: 'forecast.html',
-            template: '!!ejs-webpack-loader!./forecast.ejs'
+            template: '!!ejs-webpack-loader!./forecast.ejs',
+            chunks: ['forecast','shared']
         })
     ],
     devServer: {

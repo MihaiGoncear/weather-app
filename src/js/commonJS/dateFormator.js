@@ -72,10 +72,13 @@ export function dateFormator(){
     let hour = fullDate.getHours()
     let minutes = fullDate.getMinutes()
 
-    if(hour < 1 || minutes < 1) {
+    if(hour < 10) {
         hour = `0${hour}`;
+    }
+    if(minutes < 10) {
         minutes = `0${minutes}`;
     }
+
 
     let fullYear = `${weekDay}, ${monthDay} ${month} ${year}, ${hour}:${minutes}`
 
