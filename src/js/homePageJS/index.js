@@ -27,7 +27,37 @@ function createPage() {
 
 const myStorage = getCityFromLocalStorage();
 
+function createDropdown() {
+    let select = document.createElement('select');
+    let target = document.querySelector('.locations');
+    
+    select.setAttribute('name', 'city');
+    select.setAttribute('id', 'city');
+    select.setAttribute('class', 'city-select')
+
+    for(const city in cities) {
+        let option = document.createElement('option');
+        option.setAttribute('value', city);
+        option.innerText = cities[city].name;
+        option.setAttribute('id', city);
+        option.setAttribute('class', 'test');
+        select.append(option);
+    }
+
+    select.addEventListener('change', renderHomeTempContent)
+    
+    target.append(select);    
+}
+
+function renderHomeTempContent(event){
+    let cityKey = event.target.value;
+    addHomePageContent(cityKey)
+    currentDate.innerText = dateFormator();
+    setCityToLocalStorage(cityKey)
+}
+
 if(myStorage) {
+    document.getElementById(myStorage).selected = true
     addHomePageContent(myStorage)
 } 
 
@@ -43,36 +73,3 @@ function addHomePageContent(cityKey) {
     }
     fetchWeatherApi(cities[cityKey].name)
 }
-
-function createDropdown() {
-    let select = document.createElement('select');
-    let target = document.querySelector('.locations');
-    
-    select.setAttribute('name', 'city');
-    select.setAttribute('id', 'city');
-    select.setAttribute('class', 'city-select')
-
-    for(const city in cities) {
-        let option = document.createElement('option');
-        option.setAttribute('value', city);
-        option.innerText = cities[city].name;
-        option.setAttribute('id', cities[city].id);
-        option.setAttribute('class', 'test');
-        select.append(option);
-    }
-
-    select.addEventListener('change', renderHomeTempContent)
-    
-    target.append(select);    
-}
-
-
-
-function renderHomeTempContent(event){
-    let cityKey = event.target.value;
-    addHomePageContent(cityKey)
-    currentDate.innerText = dateFormator();
-    setCityToLocalStorage(cities[cityKey].name)
-}
-
-
