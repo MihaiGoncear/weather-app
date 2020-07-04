@@ -1,5 +1,5 @@
-import { cities } from "./cityKeys.js";
-import { fetchWeatherApiForCityList } from "./apiForCityList.js"
+import { cities } from "../commonJS/cityKeys.js";
+import { fetchWeatherApiForCityList } from "../apiJS/apiForCityList.js"
 
 export function createListDiv() {
     

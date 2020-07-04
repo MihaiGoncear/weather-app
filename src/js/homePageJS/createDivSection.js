@@ -1,7 +1,8 @@
+import { getCityFromLocalStorage } from "../localStorageJS/localStorage.js"
+
 export let mainTag = document.getElementById('locations');
 
 export function createDivSection(info) {
-    console.log(info)
     let mainDiv = document.createElement('div');
     mainDiv.setAttribute('id','main__div');
     mainDiv.classList.add('main__div');

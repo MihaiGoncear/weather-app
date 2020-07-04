@@ -1,12 +1,12 @@
-import "../styles/style.scss"
-import { cities } from "./cityKeys.js"
-import { fetchWeatherApi } from "./api.js"
-// import { getCityFromLocalStorage } from "./localStorage.js"
-// import { setCityToLocalStorage } from "./localStorage.js"
-import { headTitle } from "./navMenu.js"
+import "../../styles/style.scss"
+import { cities } from "../commonJS/cityKeys.js"
+import { fetchWeatherApi } from "../apiJS/api.js"
+import { getCityFromLocalStorage } from "../localStorageJS/localStorage.js"
+import { setCityToLocalStorage } from "../localStorageJS/localStorage.js"
+import { headTitle } from "../commonJS/navMenu.js"
 import { mainTag } from "./createDivSection.js"
-import { dateFormator } from "./dateFormator.js"
-import { createListDiv } from "./listDiv.js"
+import { dateFormator } from "../commonJS/dateFormator.js"
+import { createListDiv } from "../listPageJS/listDiv.js"
 
 let currentDate = document.getElementById('date');
 currentDate.innerText = dateFormator();
@@ -23,6 +23,25 @@ function createPage() {
     } else {
         return;
     }
+}
+
+const myStorage = getCityFromLocalStorage();
+
+if(myStorage) {
+    addHomePageContent(myStorage)
+} 
+
+function addHomePageContent(cityKey) {
+    let cityImage = cities[cityKey].url   
+
+    document.body.style.backgroundImage = `url(${cityImage})`;
+        
+    let mainDiv = document.getElementById('main__div');
+
+    if(mainDiv){
+        mainTag.removeChild(mainDiv)
+    }
+    fetchWeatherApi(cities[cityKey].name)
 }
 
 function createDropdown() {
@@ -42,25 +61,18 @@ function createDropdown() {
         select.append(option);
     }
 
-    select.addEventListener('change', addTempContent)
+    select.addEventListener('change', renderHomeTempContent)
     
     target.append(select);    
 }
 
-function addTempContent(event){
+
+
+function renderHomeTempContent(event){
     let cityKey = event.target.value;
-    let cityImage = cities[cityKey].url   
-
-    document.body.style.backgroundImage = `url(${cityImage})`;
-        
-    let mainDiv = document.getElementById('main__div');
-
-    if(mainDiv){
-        mainTag.removeChild(mainDiv)
-    }
-    
+    addHomePageContent(cityKey)
     currentDate.innerText = dateFormator();
-    fetchWeatherApi(cities[cityKey].name);
+    setCityToLocalStorage(cities[cityKey].name)
 }
 
 

@@ -44,3 +44,15 @@ header{
         }
     }
 }
+
+footer {
+    height: 50px;
+    background-color: rgba(120, 122, 253, 0.500);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}

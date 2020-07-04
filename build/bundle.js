@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "a618c23036ee8a702621";
+/******/ 	var hotCurrentHash = "d74d44978134fef1207d";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1472,111 +1472,123 @@ eval("var logLevel = \"info\";\n\nfunction dummy() {}\n\nfunction shouldLog(leve
 
 /***/ }),
 
-/***/ "./src/js/api.js":
-/*!***********************!*\
-  !*** ./src/js/api.js ***!
-  \***********************/
+/***/ "./src/js/apiJS/api.js":
+/*!*****************************!*\
+  !*** ./src/js/apiJS/api.js ***!
+  \*****************************/
 /*! exports provided: fetchWeatherApi */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"fetchWeatherApi\", function() { return fetchWeatherApi; });\n/* harmony import */ var _createDivSection_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createDivSection.js */ \"./src/js/createDivSection.js\");\n\r\n\r\nfunction fetchWeatherApi(cityName){\r\n    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=b8b5407d289db4e2cbfa0f2bbc1a70ce&units=metric`)\r\n    .then(response => response.json())\r\n    .then(data => { Object(_createDivSection_js__WEBPACK_IMPORTED_MODULE_0__[\"createDivSection\"])(data) })\r\n};\n\n//# sourceURL=webpack:///./src/js/api.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"fetchWeatherApi\", function() { return fetchWeatherApi; });\n/* harmony import */ var _homePageJS_createDivSection_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../homePageJS/createDivSection.js */ \"./src/js/homePageJS/createDivSection.js\");\n\r\n\r\nfunction fetchWeatherApi(cityName){\r\n    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=b8b5407d289db4e2cbfa0f2bbc1a70ce&units=metric`)\r\n    .then(response => response.json())\r\n    .then(data => { Object(_homePageJS_createDivSection_js__WEBPACK_IMPORTED_MODULE_0__[\"createDivSection\"])(data) })\r\n};\n\n//# sourceURL=webpack:///./src/js/apiJS/api.js?");
 
 /***/ }),
 
-/***/ "./src/js/apiForCityList.js":
-/*!**********************************!*\
-  !*** ./src/js/apiForCityList.js ***!
-  \**********************************/
+/***/ "./src/js/apiJS/apiForCityList.js":
+/*!****************************************!*\
+  !*** ./src/js/apiJS/apiForCityList.js ***!
+  \****************************************/
 /*! exports provided: fetchWeatherApiForCityList */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"fetchWeatherApiForCityList\", function() { return fetchWeatherApiForCityList; });\n/* harmony import */ var _createDivList_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createDivList.js */ \"./src/js/createDivList.js\");\n\r\n\r\nfunction fetchWeatherApiForCityList(cityName){\r\n    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=b8b5407d289db4e2cbfa0f2bbc1a70ce&units=metric`)\r\n    .then(response => response.json())\r\n    .then(data => { Object(_createDivList_js__WEBPACK_IMPORTED_MODULE_0__[\"listDivViaApi\"])(data) })\r\n};\n\n//# sourceURL=webpack:///./src/js/apiForCityList.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"fetchWeatherApiForCityList\", function() { return fetchWeatherApiForCityList; });\n/* harmony import */ var _listPageJS_createDivList_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../listPageJS/createDivList.js */ \"./src/js/listPageJS/createDivList.js\");\n\r\n\r\nfunction fetchWeatherApiForCityList(cityName){\r\n    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=b8b5407d289db4e2cbfa0f2bbc1a70ce&units=metric`)\r\n    .then(response => response.json())\r\n    .then(data => { Object(_listPageJS_createDivList_js__WEBPACK_IMPORTED_MODULE_0__[\"listDivViaApi\"])(data) })\r\n};\n\n//# sourceURL=webpack:///./src/js/apiJS/apiForCityList.js?");
 
 /***/ }),
 
-/***/ "./src/js/cityKeys.js":
-/*!****************************!*\
-  !*** ./src/js/cityKeys.js ***!
-  \****************************/
+/***/ "./src/js/commonJS/cityKeys.js":
+/*!*************************************!*\
+  !*** ./src/js/commonJS/cityKeys.js ***!
+  \*************************************/
 /*! exports provided: cities */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"cities\", function() { return cities; });\nconst cities =  {\r\n  none: {\r\n    url:\"https://www.vhv.rs/file/max/26/266366_city-skyline-png.png\",\r\n    name: \"--select--\",\r\n    id: 1\r\n  },\r\n  chisinau: {\r\n    url: \"https://sx-content-labs.sixt.io/chisinau-city-header.jpg\",\r\n    name: \"Chisinau\",\r\n    id: 2\r\n  },\r\n  london: {\r\n    url:\"https://images.unsplash.com/photo-1505761671935-60b3a7427bad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80\",\r\n    name: \"London\",\r\n    id: 3\r\n  },\r\n  moscow: {\r\n    url: \"https://cdn.getyourguide.com/img/tour_img-1233054-98.jpg\",\r\n    name: \"Moscow\",\r\n    id: 4\r\n  },\r\n  newYork: {\r\n    url: \"https://d12dkjq56sjcos.cloudfront.net/pub/media/wysiwyg/newyork/01-city-landing/New-York-Skyline-Big-Bus-Tours-Jan-2018.jpg\",\r\n    name: \"New York\",\r\n    id: 5\r\n  },\r\n  paris: {\r\n    url: \"https://imgix.bustle.com/uploads/shutterstock/2019/9/19/a49124d9-5f62-47a5-b5ec-8dd3a3066b30-shutterstock-1420728554.jpg?w=970&h=546&fit=crop&crop=faces&auto=format&q=70&dpr=2\",\r\n    name: \"Paris\",\r\n    id: 6\r\n  },\r\n}\n\n//# sourceURL=webpack:///./src/js/cityKeys.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"cities\", function() { return cities; });\nconst cities =  {\r\n  none: {\r\n    url:\"https://www.vhv.rs/file/max/26/266366_city-skyline-png.png\",\r\n    name: \"--select--\",\r\n    id: 1\r\n  },\r\n  chisinau: {\r\n    url: \"https://sx-content-labs.sixt.io/chisinau-city-header.jpg\",\r\n    name: \"Chisinau\",\r\n    id: 2\r\n  },\r\n  london: {\r\n    url:\"https://images.unsplash.com/photo-1505761671935-60b3a7427bad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80\",\r\n    name: \"London\",\r\n    id: 3\r\n  },\r\n  moscow: {\r\n    url: \"https://cdn.getyourguide.com/img/tour_img-1233054-98.jpg\",\r\n    name: \"Moscow\",\r\n    id: 4\r\n  },\r\n  newYork: {\r\n    url: \"https://d12dkjq56sjcos.cloudfront.net/pub/media/wysiwyg/newyork/01-city-landing/New-York-Skyline-Big-Bus-Tours-Jan-2018.jpg\",\r\n    name: \"New York\",\r\n    id: 5\r\n  },\r\n  paris: {\r\n    url: \"https://imgix.bustle.com/uploads/shutterstock/2019/9/19/a49124d9-5f62-47a5-b5ec-8dd3a3066b30-shutterstock-1420728554.jpg?w=970&h=546&fit=crop&crop=faces&auto=format&q=70&dpr=2\",\r\n    name: \"Paris\",\r\n    id: 6\r\n  },\r\n}\n\n//# sourceURL=webpack:///./src/js/commonJS/cityKeys.js?");
 
 /***/ }),
 
-/***/ "./src/js/createDivList.js":
-/*!*********************************!*\
-  !*** ./src/js/createDivList.js ***!
-  \*********************************/
-/*! exports provided: listDivViaApi */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"listDivViaApi\", function() { return listDivViaApi; });\nfunction listDivViaApi(info) {\r\n    let mainTag = document.getElementById('list__main');\r\n    mainTag.classList.add('list__main')\r\n    \r\n    let mainDiv = document.getElementById('list__div')\r\n\r\n    let weatherTable = document.getElementById('city__table')\r\n\r\n    let weatherTableRow = document.createElement('tr');\r\n    weatherTableRow.classList.add('city__table-row')\r\n\r\n    let weatherTableDataFirst = document.createElement('td');\r\n    let weatherTableDataSecond = document.createElement('td');\r\n    let weatherTableDataThird = document.createElement('td');\r\n\r\n    let weatherTableDataThirdImg = document.createElement('img');\r\n    weatherTableDataThirdImg.setAttribute('src', `http://openweathermap.org/img/w/${info.weather[0].icon}.png`)\r\n\r\n    weatherTableDataFirst.innerText = info.name;\r\n    weatherTableDataSecond.innerHTML = `${Math.floor(info.main.temp)}<sup>°C</sup>`;\r\n    weatherTableDataThird.append(weatherTableDataThirdImg);\r\n\r\n    weatherTableRow.append(weatherTableDataFirst);\r\n    weatherTableRow.append(weatherTableDataSecond);\r\n    weatherTableRow.append(weatherTableDataThird)\r\n\r\n    weatherTable.append(weatherTableRow);\r\n\r\n    mainDiv.append(weatherTable);\r\n\r\n    mainTag.append(mainDiv);\r\n}\n\n//# sourceURL=webpack:///./src/js/createDivList.js?");
-
-/***/ }),
-
-/***/ "./src/js/createDivSection.js":
-/*!************************************!*\
-  !*** ./src/js/createDivSection.js ***!
-  \************************************/
-/*! exports provided: mainTag, createDivSection */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"mainTag\", function() { return mainTag; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"createDivSection\", function() { return createDivSection; });\nlet mainTag = document.getElementById('locations');\r\n\r\nfunction createDivSection(info) {\r\n    console.log(info)\r\n    let mainDiv = document.createElement('div');\r\n    mainDiv.setAttribute('id','main__div');\r\n    mainDiv.classList.add('main__div');\r\n\r\n    let weatherImgDiv = document.createElement('div');\r\n    weatherImgDiv.classList.add('weather__img-div');\r\n\r\n    let weatherImg = document.createElement('img');\r\n    weatherImg.setAttribute('src', `http://openweathermap.org/img/w/${info.weather[0].icon}.png`);\r\n    weatherImg.classList.add('weather__img');\r\n\r\n    let weatherTableDiv = document.createElement('div');\r\n    weatherTableDiv.classList.add('weather__table-div');\r\n\r\n    let weatherTable = document.createElement('table');\r\n    weatherTable.classList.add('weather__table');\r\n\r\n    for(const item in info.main){\r\n        let weatherTableRow = document.createElement('tr')\r\n        let weatherTableDataFirst = document.createElement('td')\r\n        let weatherTableDataSecond = document.createElement('td')\r\n\r\n        if(item === 'feels_like'){\r\n            weatherTableDataFirst.innerText = 'Feels like:';\r\n            weatherTableDataSecond.innerHTML = `${Math.floor(info.main.feels_like)}<sup>°C</sup>`;\r\n        } else if(item === 'humidity') {\r\n            weatherTableDataFirst.innerText = 'Humidity:';\r\n            weatherTableDataSecond.innerText = `${info.main.humidity}%`;\r\n        } else if (item === 'pressure') {\r\n            weatherTableDataFirst.innerText = 'Pressure:';\r\n            weatherTableDataSecond.innerText = `${info.main.pressure} P`;\r\n        } else if (item === 'temp') {\r\n            weatherTableDataFirst.innerText = 'Temperature:';\r\n            weatherTableDataSecond.innerHTML = `${Math.floor(info.main.temp)}<sup>°C</sup>`;\r\n        } else if (item === 'temp_max') {\r\n            weatherTableDataFirst.innerText = 'Max.temperature:';\r\n            weatherTableDataSecond.innerHTML = `${Math.floor(info.main.temp_max)}<sup>°C</sup>`;\r\n        } else if (item === 'temp_min') {\r\n            weatherTableDataFirst.innerText = 'Min. temperature:';\r\n            weatherTableDataSecond.innerHTML = `${Math.floor(info.main.temp_min)}<sup>°C</sup>`;\r\n        }\r\n\r\n        weatherTableRow.append(weatherTableDataFirst);\r\n        weatherTableRow.append(weatherTableDataSecond);\r\n\r\n        weatherTable.append(weatherTableRow);\r\n    }\r\n\r\n    weatherImgDiv.append(weatherImg);\r\n    weatherTableDiv.append(weatherTable);\r\n\r\n    mainDiv.append(weatherImgDiv);\r\n    mainDiv.append(weatherTableDiv);\r\n\r\n    mainTag.append(mainDiv);\r\n}\n\n//# sourceURL=webpack:///./src/js/createDivSection.js?");
-
-/***/ }),
-
-/***/ "./src/js/dateFormator.js":
-/*!********************************!*\
-  !*** ./src/js/dateFormator.js ***!
-  \********************************/
+/***/ "./src/js/commonJS/dateFormator.js":
+/*!*****************************************!*\
+  !*** ./src/js/commonJS/dateFormator.js ***!
+  \*****************************************/
 /*! exports provided: dateFormator */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"dateFormator\", function() { return dateFormator; });\nfunction dateFormator(){\r\n    let fullDate = new Date;\r\n\r\n    let weekDay = fullDate.getDay();\r\n    switch (weekDay) {\r\n        case (1):\r\n            weekDay = 'Monday';\r\n            break;\r\n        case (2):\r\n            weekDay = 'Tuesday';\r\n            break;\r\n        case (3):\r\n            weekDay = 'Wednesday';\r\n            break;\r\n        case (4):\r\n            weekDay = 'Thursday';\r\n            break;\r\n        case (5):\r\n            weekDay = 'Friday';\r\n            break;\r\n        case (6):\r\n            weekDay = 'Saturday';\r\n            break;\r\n        case (7):\r\n            weekDay = 'Sunday';\r\n            break; \r\n    }\r\n    \r\n    let monthDay = fullDate.getDate();\r\n    let month = fullDate.getMonth() + 1;\r\n    switch (month) {\r\n        case (1):\r\n            month = 'Jan';\r\n            break;\r\n        case (2):\r\n            month = 'Feb';\r\n            break;\r\n        case (3):\r\n            month = 'Mar';\r\n            break;\r\n        case (4):\r\n            month = 'Apr';\r\n            break;\r\n        case (5):\r\n            month = 'May';\r\n            break;\r\n        case (6):\r\n            month = 'Jun';\r\n            break;\r\n        case (7):\r\n            month = 'Jul';\r\n            break; \r\n        case (8):\r\n            month = 'Aug';\r\n            break; \r\n        case (9):\r\n            month = 'Sep';\r\n            break; \r\n        case (10):\r\n            month = 'Oct';\r\n            break; \r\n        case (11):\r\n            month = 'Nov';\r\n            break; \r\n        case (12):\r\n            month = 'Dec';\r\n            break; \r\n    }\r\n\r\n    let year = fullDate.getFullYear();\r\n\r\n    let hour = fullDate.getHours()\r\n    let minutes = fullDate.getMinutes()\r\n\r\n    let fullYear = `${weekDay}, ${monthDay} ${month} ${year}, ${hour}:${minutes}`\r\n\r\n    return fullYear;\r\n}\n\n//# sourceURL=webpack:///./src/js/dateFormator.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"dateFormator\", function() { return dateFormator; });\nfunction dateFormator(){\r\n    let fullDate = new Date;\r\n\r\n    let weekDay = fullDate.getDay();\r\n    switch (weekDay) {\r\n        case (1):\r\n            weekDay = 'Monday';\r\n            break;\r\n        case (2):\r\n            weekDay = 'Tuesday';\r\n            break;\r\n        case (3):\r\n            weekDay = 'Wednesday';\r\n            break;\r\n        case (4):\r\n            weekDay = 'Thursday';\r\n            break;\r\n        case (5):\r\n            weekDay = 'Friday';\r\n            break;\r\n        case (6):\r\n            weekDay = 'Saturday';\r\n            break;\r\n        case (7):\r\n            weekDay = 'Sunday';\r\n            break; \r\n    }\r\n    \r\n    let monthDay = fullDate.getDate();\r\n    let month = fullDate.getMonth() + 1;\r\n    switch (month) {\r\n        case (1):\r\n            month = 'Jan';\r\n            break;\r\n        case (2):\r\n            month = 'Feb';\r\n            break;\r\n        case (3):\r\n            month = 'Mar';\r\n            break;\r\n        case (4):\r\n            month = 'Apr';\r\n            break;\r\n        case (5):\r\n            month = 'May';\r\n            break;\r\n        case (6):\r\n            month = 'Jun';\r\n            break;\r\n        case (7):\r\n            month = 'Jul';\r\n            break; \r\n        case (8):\r\n            month = 'Aug';\r\n            break; \r\n        case (9):\r\n            month = 'Sep';\r\n            break; \r\n        case (10):\r\n            month = 'Oct';\r\n            break; \r\n        case (11):\r\n            month = 'Nov';\r\n            break; \r\n        case (12):\r\n            month = 'Dec';\r\n            break; \r\n    }\r\n\r\n    let year = fullDate.getFullYear();\r\n\r\n    let hour = fullDate.getHours()\r\n    let minutes = fullDate.getMinutes()\r\n\r\n    if(hour < 1 || minutes < 1) {\r\n        hour = `0${hour}`;\r\n        minutes = `0${minutes}`;\r\n    }\r\n\r\n    let fullYear = `${weekDay}, ${monthDay} ${month} ${year}, ${hour}:${minutes}`\r\n\r\n    return fullYear;\r\n}\n\n//# sourceURL=webpack:///./src/js/commonJS/dateFormator.js?");
 
 /***/ }),
 
-/***/ "./src/js/index.js":
-/*!*************************!*\
-  !*** ./src/js/index.js ***!
-  \*************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/style.scss */ \"./src/styles/style.scss\");\n/* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_style_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _cityKeys_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./cityKeys.js */ \"./src/js/cityKeys.js\");\n/* harmony import */ var _api_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./api.js */ \"./src/js/api.js\");\n/* harmony import */ var _navMenu_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./navMenu.js */ \"./src/js/navMenu.js\");\n/* harmony import */ var _createDivSection_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./createDivSection.js */ \"./src/js/createDivSection.js\");\n/* harmony import */ var _dateFormator_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./dateFormator.js */ \"./src/js/dateFormator.js\");\n/* harmony import */ var _listDiv_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./listDiv.js */ \"./src/js/listDiv.js\");\n\r\n\r\n\r\n// import { getCityFromLocalStorage } from \"./localStorage.js\"\r\n// import { setCityToLocalStorage } from \"./localStorage.js\"\r\n\r\n\r\n\r\n\r\n\r\nlet currentDate = document.getElementById('date');\r\ncurrentDate.innerText = Object(_dateFormator_js__WEBPACK_IMPORTED_MODULE_5__[\"dateFormator\"])();\r\n\r\ndocument.onload = createPage();\r\n\r\nfunction createPage() {\r\n    if(_navMenu_js__WEBPACK_IMPORTED_MODULE_3__[\"headTitle\"].dataset.name === 'home') {\r\n        createDropdown();\r\n        document.body.style.backgroundImage = \"url(https://www.vhv.rs/file/max/26/266366_city-skyline-png.png)\";\r\n    } else if(_navMenu_js__WEBPACK_IMPORTED_MODULE_3__[\"headTitle\"].dataset.name === 'about'){\r\n        document.body.style.backgroundImage = \"url(https://thewallpaper.co//wp-content/uploads/2016/10preview/free-weather-background-hd-wallpapers-windows-apple-amazing-4k-samsung-wallpapers-free-download-1920x1080.jpg)\";\r\n        Object(_listDiv_js__WEBPACK_IMPORTED_MODULE_6__[\"createListDiv\"])();\r\n    } else {\r\n        return;\r\n    }\r\n}\r\n\r\nfunction createDropdown() {\r\n    let select = document.createElement('select');\r\n    let target = document.querySelector('.locations');\r\n    \r\n    select.setAttribute('name', 'city');\r\n    select.setAttribute('id', 'city');\r\n    select.setAttribute('class', 'city-select')\r\n\r\n    for(const city in _cityKeys_js__WEBPACK_IMPORTED_MODULE_1__[\"cities\"]) {\r\n        let option = document.createElement('option');\r\n        option.setAttribute('value', city);\r\n        option.innerText = _cityKeys_js__WEBPACK_IMPORTED_MODULE_1__[\"cities\"][city].name;\r\n        option.setAttribute('id', _cityKeys_js__WEBPACK_IMPORTED_MODULE_1__[\"cities\"][city].id);\r\n        option.setAttribute('class', 'test');\r\n        select.append(option);\r\n    }\r\n\r\n    select.addEventListener('change', addTempContent)\r\n    \r\n    target.append(select);    \r\n}\r\n\r\nfunction addTempContent(event){\r\n    let cityKey = event.target.value;\r\n    let cityImage = _cityKeys_js__WEBPACK_IMPORTED_MODULE_1__[\"cities\"][cityKey].url   \r\n\r\n    document.body.style.backgroundImage = `url(${cityImage})`;\r\n        \r\n    let mainDiv = document.getElementById('main__div');\r\n\r\n    if(mainDiv){\r\n        _createDivSection_js__WEBPACK_IMPORTED_MODULE_4__[\"mainTag\"].removeChild(mainDiv)\r\n    }\r\n    \r\n    currentDate.innerText = Object(_dateFormator_js__WEBPACK_IMPORTED_MODULE_5__[\"dateFormator\"])();\r\n    Object(_api_js__WEBPACK_IMPORTED_MODULE_2__[\"fetchWeatherApi\"])(_cityKeys_js__WEBPACK_IMPORTED_MODULE_1__[\"cities\"][cityKey].name);\r\n}\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./src/js/index.js?");
-
-/***/ }),
-
-/***/ "./src/js/listDiv.js":
-/*!***************************!*\
-  !*** ./src/js/listDiv.js ***!
-  \***************************/
-/*! exports provided: createListDiv */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"createListDiv\", function() { return createListDiv; });\n/* harmony import */ var _cityKeys_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./cityKeys.js */ \"./src/js/cityKeys.js\");\n/* harmony import */ var _apiForCityList_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./apiForCityList.js */ \"./src/js/apiForCityList.js\");\n\r\n\r\n\r\nfunction createListDiv() {\r\n    \r\n    for(const city in _cityKeys_js__WEBPACK_IMPORTED_MODULE_0__[\"cities\"]) {\r\n\r\n        let cityName = _cityKeys_js__WEBPACK_IMPORTED_MODULE_0__[\"cities\"][city].name;\r\n        \r\n        if(cityName === '--select--') {\r\n            continue\r\n        } else {\r\n            Object(_apiForCityList_js__WEBPACK_IMPORTED_MODULE_1__[\"fetchWeatherApiForCityList\"])(cityName)\r\n        }\r\n    }    \r\n}\r\n\n\n//# sourceURL=webpack:///./src/js/listDiv.js?");
-
-/***/ }),
-
-/***/ "./src/js/navMenu.js":
-/*!***************************!*\
-  !*** ./src/js/navMenu.js ***!
-  \***************************/
+/***/ "./src/js/commonJS/navMenu.js":
+/*!************************************!*\
+  !*** ./src/js/commonJS/navMenu.js ***!
+  \************************************/
 /*! exports provided: headTitle */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"headTitle\", function() { return headTitle; });\nlet homeBtn = document.getElementById('home');\r\nlet aboutBtn = document.getElementById('about');\r\nlet contactBtn = document.getElementById('contact');\r\nlet headTitle = document.getElementById('title');\r\n\r\nhomeBtn.onclick = buttonChange(homeBtn);\r\naboutBtn.onclick = buttonChange(aboutBtn);\r\ncontactBtn.onclick = buttonChange(contactBtn);\r\n\r\nfunction buttonChange(mainButton){\r\n\r\n    if(headTitle.dataset.name === mainButton.id){\r\n        mainButton.style.color = 'rgba(0, 0, 255, 0.548)';\r\n        mainButton.style.backgroundColor = 'rgba(153, 155, 255, 0.418)';\r\n        mainButton.style.fontWeight = 'bold';\r\n    }\r\n}\n\n//# sourceURL=webpack:///./src/js/navMenu.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"headTitle\", function() { return headTitle; });\nlet homeBtn = document.getElementById('home');\r\nlet aboutBtn = document.getElementById('about');\r\nlet contactBtn = document.getElementById('contact');\r\nlet headTitle = document.getElementById('title');\r\n\r\nhomeBtn.onclick = buttonChange(homeBtn);\r\naboutBtn.onclick = buttonChange(aboutBtn);\r\ncontactBtn.onclick = buttonChange(contactBtn);\r\n\r\nfunction buttonChange(mainButton){\r\n\r\n    if(headTitle.dataset.name === mainButton.id){\r\n        mainButton.style.color = 'rgba(0, 0, 255, 0.548)';\r\n        mainButton.style.backgroundColor = 'rgba(153, 155, 255, 0.418)';\r\n        mainButton.style.fontWeight = 'bold';\r\n    }\r\n}\n\n//# sourceURL=webpack:///./src/js/commonJS/navMenu.js?");
+
+/***/ }),
+
+/***/ "./src/js/homePageJS/createDivSection.js":
+/*!***********************************************!*\
+  !*** ./src/js/homePageJS/createDivSection.js ***!
+  \***********************************************/
+/*! exports provided: mainTag, createDivSection */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"mainTag\", function() { return mainTag; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"createDivSection\", function() { return createDivSection; });\n/* harmony import */ var _localStorageJS_localStorage_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../localStorageJS/localStorage.js */ \"./src/js/localStorageJS/localStorage.js\");\n\r\n\r\nlet mainTag = document.getElementById('locations');\r\n\r\nfunction createDivSection(info) {\r\n    let mainDiv = document.createElement('div');\r\n    mainDiv.setAttribute('id','main__div');\r\n    mainDiv.classList.add('main__div');\r\n\r\n    let weatherImgDiv = document.createElement('div');\r\n    weatherImgDiv.classList.add('weather__img-div');\r\n\r\n    let weatherImg = document.createElement('img');\r\n    weatherImg.setAttribute('src', `http://openweathermap.org/img/w/${info.weather[0].icon}.png`);\r\n    weatherImg.classList.add('weather__img');\r\n\r\n    let weatherTableDiv = document.createElement('div');\r\n    weatherTableDiv.classList.add('weather__table-div');\r\n\r\n    let weatherTable = document.createElement('table');\r\n    weatherTable.classList.add('weather__table');\r\n\r\n    for(const item in info.main){\r\n        let weatherTableRow = document.createElement('tr')\r\n        let weatherTableDataFirst = document.createElement('td')\r\n        let weatherTableDataSecond = document.createElement('td')\r\n\r\n        if(item === 'feels_like'){\r\n            weatherTableDataFirst.innerText = 'Feels like:';\r\n            weatherTableDataSecond.innerHTML = `${Math.floor(info.main.feels_like)}<sup>°C</sup>`;\r\n        } else if(item === 'humidity') {\r\n            weatherTableDataFirst.innerText = 'Humidity:';\r\n            weatherTableDataSecond.innerText = `${info.main.humidity}%`;\r\n        } else if (item === 'pressure') {\r\n            weatherTableDataFirst.innerText = 'Pressure:';\r\n            weatherTableDataSecond.innerText = `${info.main.pressure} P`;\r\n        } else if (item === 'temp') {\r\n            weatherTableDataFirst.innerText = 'Temperature:';\r\n            weatherTableDataSecond.innerHTML = `${Math.floor(info.main.temp)}<sup>°C</sup>`;\r\n        } else if (item === 'temp_max') {\r\n            weatherTableDataFirst.innerText = 'Max.temperature:';\r\n            weatherTableDataSecond.innerHTML = `${Math.floor(info.main.temp_max)}<sup>°C</sup>`;\r\n        } else if (item === 'temp_min') {\r\n            weatherTableDataFirst.innerText = 'Min. temperature:';\r\n            weatherTableDataSecond.innerHTML = `${Math.floor(info.main.temp_min)}<sup>°C</sup>`;\r\n        }\r\n\r\n        weatherTableRow.append(weatherTableDataFirst);\r\n        weatherTableRow.append(weatherTableDataSecond);\r\n\r\n        weatherTable.append(weatherTableRow);\r\n    }\r\n\r\n    weatherImgDiv.append(weatherImg);\r\n    weatherTableDiv.append(weatherTable);\r\n\r\n    mainDiv.append(weatherImgDiv);\r\n    mainDiv.append(weatherTableDiv);\r\n\r\n    mainTag.append(mainDiv);\r\n}\n\n//# sourceURL=webpack:///./src/js/homePageJS/createDivSection.js?");
+
+/***/ }),
+
+/***/ "./src/js/homePageJS/index.js":
+/*!************************************!*\
+  !*** ./src/js/homePageJS/index.js ***!
+  \************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../styles/style.scss */ \"./src/styles/style.scss\");\n/* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_style_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _commonJS_cityKeys_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../commonJS/cityKeys.js */ \"./src/js/commonJS/cityKeys.js\");\n/* harmony import */ var _apiJS_api_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../apiJS/api.js */ \"./src/js/apiJS/api.js\");\n/* harmony import */ var _localStorageJS_localStorage_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../localStorageJS/localStorage.js */ \"./src/js/localStorageJS/localStorage.js\");\n/* harmony import */ var _commonJS_navMenu_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../commonJS/navMenu.js */ \"./src/js/commonJS/navMenu.js\");\n/* harmony import */ var _createDivSection_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./createDivSection.js */ \"./src/js/homePageJS/createDivSection.js\");\n/* harmony import */ var _commonJS_dateFormator_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../commonJS/dateFormator.js */ \"./src/js/commonJS/dateFormator.js\");\n/* harmony import */ var _listPageJS_listDiv_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../listPageJS/listDiv.js */ \"./src/js/listPageJS/listDiv.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nlet currentDate = document.getElementById('date');\r\ncurrentDate.innerText = Object(_commonJS_dateFormator_js__WEBPACK_IMPORTED_MODULE_6__[\"dateFormator\"])();\r\n\r\ndocument.onload = createPage();\r\n\r\nfunction createPage() {\r\n    if(_commonJS_navMenu_js__WEBPACK_IMPORTED_MODULE_4__[\"headTitle\"].dataset.name === 'home') {\r\n        createDropdown();\r\n        document.body.style.backgroundImage = \"url(https://www.vhv.rs/file/max/26/266366_city-skyline-png.png)\";\r\n    } else if(_commonJS_navMenu_js__WEBPACK_IMPORTED_MODULE_4__[\"headTitle\"].dataset.name === 'about'){\r\n        document.body.style.backgroundImage = \"url(https://thewallpaper.co//wp-content/uploads/2016/10preview/free-weather-background-hd-wallpapers-windows-apple-amazing-4k-samsung-wallpapers-free-download-1920x1080.jpg)\";\r\n        Object(_listPageJS_listDiv_js__WEBPACK_IMPORTED_MODULE_7__[\"createListDiv\"])();\r\n    } else {\r\n        return;\r\n    }\r\n}\r\n\r\nconst myStorage = Object(_localStorageJS_localStorage_js__WEBPACK_IMPORTED_MODULE_3__[\"getCityFromLocalStorage\"])();\r\n\r\nif(myStorage) {\r\n    addHomePageContent(myStorage)\r\n} \r\n\r\nfunction addHomePageContent(cityKey) {\r\n    let cityImage = _commonJS_cityKeys_js__WEBPACK_IMPORTED_MODULE_1__[\"cities\"][cityKey].url   \r\n\r\n    document.body.style.backgroundImage = `url(${cityImage})`;\r\n        \r\n    let mainDiv = document.getElementById('main__div');\r\n\r\n    if(mainDiv){\r\n        _createDivSection_js__WEBPACK_IMPORTED_MODULE_5__[\"mainTag\"].removeChild(mainDiv)\r\n    }\r\n    Object(_apiJS_api_js__WEBPACK_IMPORTED_MODULE_2__[\"fetchWeatherApi\"])(_commonJS_cityKeys_js__WEBPACK_IMPORTED_MODULE_1__[\"cities\"][cityKey].name)\r\n}\r\n\r\nfunction createDropdown() {\r\n    let select = document.createElement('select');\r\n    let target = document.querySelector('.locations');\r\n    \r\n    select.setAttribute('name', 'city');\r\n    select.setAttribute('id', 'city');\r\n    select.setAttribute('class', 'city-select')\r\n\r\n    for(const city in _commonJS_cityKeys_js__WEBPACK_IMPORTED_MODULE_1__[\"cities\"]) {\r\n        let option = document.createElement('option');\r\n        option.setAttribute('value', city);\r\n        option.innerText = _commonJS_cityKeys_js__WEBPACK_IMPORTED_MODULE_1__[\"cities\"][city].name;\r\n        option.setAttribute('id', _commonJS_cityKeys_js__WEBPACK_IMPORTED_MODULE_1__[\"cities\"][city].id);\r\n        option.setAttribute('class', 'test');\r\n        select.append(option);\r\n    }\r\n\r\n    select.addEventListener('change', renderHomeTempContent)\r\n    \r\n    target.append(select);    \r\n}\r\n\r\n\r\n\r\nfunction renderHomeTempContent(event){\r\n    let cityKey = event.target.value;\r\n    addHomePageContent(cityKey)\r\n    currentDate.innerText = Object(_commonJS_dateFormator_js__WEBPACK_IMPORTED_MODULE_6__[\"dateFormator\"])();\r\n    Object(_localStorageJS_localStorage_js__WEBPACK_IMPORTED_MODULE_3__[\"setCityToLocalStorage\"])(_commonJS_cityKeys_js__WEBPACK_IMPORTED_MODULE_1__[\"cities\"][cityKey].name)\r\n}\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./src/js/homePageJS/index.js?");
+
+/***/ }),
+
+/***/ "./src/js/listPageJS/createDivList.js":
+/*!********************************************!*\
+  !*** ./src/js/listPageJS/createDivList.js ***!
+  \********************************************/
+/*! exports provided: listDivViaApi */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"listDivViaApi\", function() { return listDivViaApi; });\nfunction listDivViaApi(info) {\r\n    let mainTag = document.getElementById('list__main');\r\n    mainTag.classList.add('list__main')\r\n    \r\n    let mainDiv = document.getElementById('list__div')\r\n\r\n    let weatherTable = document.getElementById('city__table')\r\n\r\n    let weatherTableRow = document.createElement('tr');\r\n    weatherTableRow.classList.add('city__table-row')\r\n\r\n    let weatherTableDataFirst = document.createElement('td');\r\n    let weatherTableDataSecond = document.createElement('td');\r\n    let weatherTableDataThird = document.createElement('td');\r\n\r\n    let weatherTableDataThirdImg = document.createElement('img');\r\n    weatherTableDataThirdImg.setAttribute('src', `http://openweathermap.org/img/w/${info.weather[0].icon}.png`)\r\n\r\n    weatherTableDataFirst.innerText = info.name;\r\n    weatherTableDataSecond.innerHTML = `${Math.floor(info.main.temp)}<sup>°C</sup>`;\r\n    weatherTableDataThird.append(weatherTableDataThirdImg);\r\n\r\n    weatherTableRow.append(weatherTableDataFirst);\r\n    weatherTableRow.append(weatherTableDataSecond);\r\n    weatherTableRow.append(weatherTableDataThird)\r\n\r\n    weatherTable.append(weatherTableRow);\r\n\r\n    mainDiv.append(weatherTable);\r\n\r\n    mainTag.append(mainDiv);\r\n}\n\n//# sourceURL=webpack:///./src/js/listPageJS/createDivList.js?");
+
+/***/ }),
+
+/***/ "./src/js/listPageJS/listDiv.js":
+/*!**************************************!*\
+  !*** ./src/js/listPageJS/listDiv.js ***!
+  \**************************************/
+/*! exports provided: createListDiv */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"createListDiv\", function() { return createListDiv; });\n/* harmony import */ var _commonJS_cityKeys_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../commonJS/cityKeys.js */ \"./src/js/commonJS/cityKeys.js\");\n/* harmony import */ var _apiJS_apiForCityList_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../apiJS/apiForCityList.js */ \"./src/js/apiJS/apiForCityList.js\");\n\r\n\r\n\r\nfunction createListDiv() {\r\n    \r\n    for(const city in _commonJS_cityKeys_js__WEBPACK_IMPORTED_MODULE_0__[\"cities\"]) {\r\n\r\n        let cityName = _commonJS_cityKeys_js__WEBPACK_IMPORTED_MODULE_0__[\"cities\"][city].name;\r\n        \r\n        if(cityName === '--select--') {\r\n            continue\r\n        } else {\r\n            Object(_apiJS_apiForCityList_js__WEBPACK_IMPORTED_MODULE_1__[\"fetchWeatherApiForCityList\"])(cityName)\r\n        }\r\n    }    \r\n}\r\n\n\n//# sourceURL=webpack:///./src/js/listPageJS/listDiv.js?");
+
+/***/ }),
+
+/***/ "./src/js/localStorageJS/localStorage.js":
+/*!***********************************************!*\
+  !*** ./src/js/localStorageJS/localStorage.js ***!
+  \***********************************************/
+/*! exports provided: getCityFromLocalStorage, setCityToLocalStorage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getCityFromLocalStorage\", function() { return getCityFromLocalStorage; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"setCityToLocalStorage\", function() { return setCityToLocalStorage; });\nfunction getCityFromLocalStorage() {\r\n    return JSON.parse(localStorage.getItem('city'));\r\n};\r\n\r\nfunction setCityToLocalStorage(city) {\r\n    localStorage.setItem('city', JSON.stringify(city))\r\n};\n\n//# sourceURL=webpack:///./src/js/localStorageJS/localStorage.js?");
 
 /***/ }),
 
@@ -1587,18 +1599,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// extracted by mini-css-extract-plugin\n    if(true) {\n      // 1593722651852\n      var cssReload = __webpack_require__(/*! ../../node_modules/css-hot-loader/hotModuleReplacement.js */ \"./node_modules/css-hot-loader/hotModuleReplacement.js\")(module.i, {\"fileMap\":\"{fileName}\"});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);;\n    }\n  \n\n//# sourceURL=webpack:///./src/styles/style.scss?");
+eval("// extracted by mini-css-extract-plugin\n    if(true) {\n      // 1593865348410\n      var cssReload = __webpack_require__(/*! ../../node_modules/css-hot-loader/hotModuleReplacement.js */ \"./node_modules/css-hot-loader/hotModuleReplacement.js\")(module.i, {\"fileMap\":\"{fileName}\"});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);;\n    }\n  \n\n//# sourceURL=webpack:///./src/styles/style.scss?");
 
 /***/ }),
 
 /***/ 0:
-/*!*************************************************************************************************************!*\
-  !*** multi (webpack)-dev-server/client?http://localhost:9000 (webpack)/hot/dev-server.js ./src/js/index.js ***!
-  \*************************************************************************************************************/
+/*!************************************************************************************************************************!*\
+  !*** multi (webpack)-dev-server/client?http://localhost:9000 (webpack)/hot/dev-server.js ./src/js/homePageJS/index.js ***!
+  \************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("__webpack_require__(/*! C:\\Users\\Admin\\Desktop\\FrontEnd\\Practica\\HomeWork\\JS12Webpack\\node_modules\\webpack-dev-server\\client\\index.js?http://localhost:9000 */\"./node_modules/webpack-dev-server/client/index.js?http://localhost:9000\");\n__webpack_require__(/*! C:\\Users\\Admin\\Desktop\\FrontEnd\\Practica\\HomeWork\\JS12Webpack\\node_modules\\webpack\\hot\\dev-server.js */\"./node_modules/webpack/hot/dev-server.js\");\nmodule.exports = __webpack_require__(/*! ./src/js/index.js */\"./src/js/index.js\");\n\n\n//# sourceURL=webpack:///multi_(webpack)-dev-server/client?");
+eval("__webpack_require__(/*! C:\\Users\\Admin\\Desktop\\FrontEnd\\Practica\\HomeWork\\JS12Webpack\\node_modules\\webpack-dev-server\\client\\index.js?http://localhost:9000 */\"./node_modules/webpack-dev-server/client/index.js?http://localhost:9000\");\n__webpack_require__(/*! C:\\Users\\Admin\\Desktop\\FrontEnd\\Practica\\HomeWork\\JS12Webpack\\node_modules\\webpack\\hot\\dev-server.js */\"./node_modules/webpack/hot/dev-server.js\");\nmodule.exports = __webpack_require__(/*! ./src/js/homePageJS/index.js */\"./src/js/homePageJS/index.js\");\n\n\n//# sourceURL=webpack:///multi_(webpack)-dev-server/client?");
 
 /***/ })
 

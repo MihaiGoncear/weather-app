@@ -1,7 +1,7 @@
-import { listDivViaApi } from "./createDivList.js"
+import { createDivSection } from "../homePageJS/createDivSection.js"
 
-export  function fetchWeatherApiForCityList(cityName){
+export  function fetchWeatherApi(cityName){
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=b8b5407d289db4e2cbfa0f2bbc1a70ce&units=metric`)
     .then(response => response.json())
-    .then(data => { listDivViaApi(data) })
+    .then(data => { createDivSection(data) })
 };

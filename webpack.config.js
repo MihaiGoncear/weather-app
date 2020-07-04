@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
-    entry: './src/js/index.js',
+    entry: './src/js/homePageJS/index.js',
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'bundle.js'
@@ -41,6 +41,10 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'contacts.html',
             template: '!!ejs-webpack-loader!./contacts.ejs'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'forecast.html',
+            template: '!!ejs-webpack-loader!./forecast.ejs'
         })
     ],
     devServer: {
