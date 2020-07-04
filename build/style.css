@@ -148,3 +148,11 @@ footer {
           .list__main .list__div .city__table tr :nth-child(3) img {
             width: 4vw; }
 
+.forecast__main {
+  list-style: none;
+  display: flex;
+  flex-flow: row nowrap; }
+  .forecast__main ul {
+    list-style: none;
+    margin: 10%; }
+

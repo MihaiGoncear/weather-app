@@ -1,1 +1,3 @@
-console.log('aaaaaaaaaaaaaaaaaaaaaaaaa')
+import { fetchWeatherApi } from '../apiJS/apiForecast.js'
+
+fetchWeatherApi()

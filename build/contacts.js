@@ -282,7 +282,7 @@
 /******/ 				};
 /******/ 			});
 /******/ 			hotUpdate = {};
-/******/ 			var chunkId = "list";
+/******/ 			var chunkId = "contacts";
 /******/ 			// eslint-disable-next-line no-lone-blocks
 /******/ 			{
 /******/ 				hotEnsureUpdateChunk(chunkId);
@@ -854,7 +854,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return hotCreateRequire(1)(__webpack_require__.s = 1);
+/******/ 	return hotCreateRequire(3)(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1245,74 +1245,25 @@ eval("var logLevel = \"info\";\n\nfunction dummy() {}\n\nfunction shouldLog(leve
 
 /***/ }),
 
-/***/ "./src/js/apiJS/apiForCityList.js":
-/*!****************************************!*\
-  !*** ./src/js/apiJS/apiForCityList.js ***!
-  \****************************************/
-/*! exports provided: fetchWeatherApiForCityList */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./src/js/contactsJS/contacts.js":
+/*!***************************************!*\
+  !*** ./src/js/contactsJS/contacts.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"fetchWeatherApiForCityList\", function() { return fetchWeatherApiForCityList; });\n/* harmony import */ var _listPageJS_createDivList_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../listPageJS/createDivList.js */ \"./src/js/listPageJS/createDivList.js\");\n\r\n\r\nfunction fetchWeatherApiForCityList(cityName){\r\n    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=b8b5407d289db4e2cbfa0f2bbc1a70ce&units=metric`)\r\n    .then(response => response.json())\r\n    .then(data => { Object(_listPageJS_createDivList_js__WEBPACK_IMPORTED_MODULE_0__[\"listDivViaApi\"])(data) })\r\n};\n\n//# sourceURL=webpack:///./src/js/apiJS/apiForCityList.js?");
-
-/***/ }),
-
-/***/ "./src/js/commonJS/cityKeys.js":
-/*!*************************************!*\
-  !*** ./src/js/commonJS/cityKeys.js ***!
-  \*************************************/
-/*! exports provided: cities */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"cities\", function() { return cities; });\nconst cities =  {\r\n  none: {\r\n    url:\"https://www.vhv.rs/file/max/26/266366_city-skyline-png.png\",\r\n    name: \"--select--\",\r\n  },\r\n  chisinau: {\r\n    url: \"https://sx-content-labs.sixt.io/chisinau-city-header.jpg\",\r\n    name: \"Chisinau\",\r\n  },\r\n  london: {\r\n    url:\"https://images.unsplash.com/photo-1505761671935-60b3a7427bad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80\",\r\n    name: \"London\",\r\n  },\r\n  moscow: {\r\n    url: \"https://cdn.getyourguide.com/img/tour_img-1233054-98.jpg\",\r\n    name: \"Moscow\",\r\n  },\r\n  newYork: {\r\n    url: \"https://d12dkjq56sjcos.cloudfront.net/pub/media/wysiwyg/newyork/01-city-landing/New-York-Skyline-Big-Bus-Tours-Jan-2018.jpg\",\r\n    name: \"New York\",\r\n  },\r\n  paris: {\r\n    url: \"https://imgix.bustle.com/uploads/shutterstock/2019/9/19/a49124d9-5f62-47a5-b5ec-8dd3a3066b30-shutterstock-1420728554.jpg?w=970&h=546&fit=crop&crop=faces&auto=format&q=70&dpr=2\",\r\n    name: \"Paris\",\r\n  },\r\n}\n\n//# sourceURL=webpack:///./src/js/commonJS/cityKeys.js?");
+eval("console.log('ttttttteeeeeeeeessssssssssttttttttt')\n\n//# sourceURL=webpack:///./src/js/contactsJS/contacts.js?");
 
 /***/ }),
 
-/***/ "./src/js/listPageJS/createDivList.js":
-/*!********************************************!*\
-  !*** ./src/js/listPageJS/createDivList.js ***!
-  \********************************************/
-/*! exports provided: listDivViaApi */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"listDivViaApi\", function() { return listDivViaApi; });\n/* harmony import */ var _localStorageJS_localStorage_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../localStorageJS/localStorage.js */ \"./src/js/localStorageJS/localStorage.js\");\n/* harmony import */ var _commonJS_cityKeys_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../commonJS/cityKeys.js */ \"./src/js/commonJS/cityKeys.js\");\n\r\n\r\n\r\n\r\nfunction listDivViaApi(info) {\r\n    \r\n    let mainTag = document.getElementById('list__main');\r\n    mainTag.classList.add('list__main')\r\n    \r\n    let mainDiv = document.getElementById('list__div')\r\n\r\n    let weatherTable = document.getElementById('city__table')\r\n\r\n    let weatherTableRow = document.createElement('tr');\r\n    weatherTableRow.classList.add('city__table-row')\r\n\r\n    let weatherTableDataFirst = document.createElement('td');\r\n    let weatherTableDataSecond = document.createElement('td');\r\n    let weatherTableDataThird = document.createElement('td');\r\n    \r\n    // let myStorage = getCityFromLocalStorage();\r\n    // let storageCity = cities[myStorage].name\r\n\r\n    let weatherTableDataThirdImg = document.createElement('img');\r\n    weatherTableDataThirdImg.setAttribute('src', `http://openweathermap.org/img/w/${info.weather[0].icon}.png`)\r\n    weatherTableDataThirdImg.setAttribute('alt', info.weather[0].description)\r\n\r\n    // let myStorage = getCityFromLocalStorage();\r\n    // let storageCity = cities[myStorage].name\r\n\r\n    // if(myStorage){\r\n    //     if(info.name === storageCity){\r\n    //         weatherTableRow.style.display = 'none'\r\n    //         console.log(storageCity)\r\n    //         console.log(info.name)\r\n    //     } else{\r\n    //         weatherTableDataFirst.innerText = info.name;\r\n    //     }\r\n    // }\r\n     \r\n    weatherTableDataFirst.innerText = info.name;\r\n    weatherTableDataSecond.innerHTML = `${Math.floor(info.main.temp)}<sup>°C</sup>`;\r\n    weatherTableDataThird.append(weatherTableDataThirdImg);\r\n\r\n    weatherTableRow.append(weatherTableDataFirst);\r\n    weatherTableRow.append(weatherTableDataSecond);\r\n    weatherTableRow.append(weatherTableDataThird)\r\n\r\n    weatherTable.append(weatherTableRow);\r\n\r\n    mainDiv.append(weatherTable);\r\n\r\n    mainTag.append(mainDiv);\r\n}\n\n//# sourceURL=webpack:///./src/js/listPageJS/createDivList.js?");
-
-/***/ }),
-
-/***/ "./src/js/listPageJS/listDiv.js":
-/*!**************************************!*\
-  !*** ./src/js/listPageJS/listDiv.js ***!
-  \**************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _commonJS_cityKeys_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../commonJS/cityKeys.js */ \"./src/js/commonJS/cityKeys.js\");\n/* harmony import */ var _apiJS_apiForCityList_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../apiJS/apiForCityList.js */ \"./src/js/apiJS/apiForCityList.js\");\n\r\n\r\n\r\ndocument.onload = createListDiv();\r\n\r\nfunction createListDiv() {\r\n    \r\n    for(const city in _commonJS_cityKeys_js__WEBPACK_IMPORTED_MODULE_0__[\"cities\"]) {\r\n\r\n        let cityName = _commonJS_cityKeys_js__WEBPACK_IMPORTED_MODULE_0__[\"cities\"][city].name;\r\n        \r\n        if(cityName === '--select--') {\r\n            continue\r\n        } else {\r\n            Object(_apiJS_apiForCityList_js__WEBPACK_IMPORTED_MODULE_1__[\"fetchWeatherApiForCityList\"])(cityName)\r\n        }\r\n    }    \r\n    document.body.style.backgroundImage = \"url(./images/list-bg.jpg)\";\r\n}\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./src/js/listPageJS/listDiv.js?");
-
-/***/ }),
-
-/***/ "./src/js/localStorageJS/localStorage.js":
-/*!***********************************************!*\
-  !*** ./src/js/localStorageJS/localStorage.js ***!
-  \***********************************************/
-/*! exports provided: getCityFromLocalStorage, setCityToLocalStorage */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getCityFromLocalStorage\", function() { return getCityFromLocalStorage; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"setCityToLocalStorage\", function() { return setCityToLocalStorage; });\nfunction getCityFromLocalStorage() {\r\n    return JSON.parse(localStorage.getItem('city'));\r\n};\r\n\r\nfunction setCityToLocalStorage(city) {\r\n    localStorage.setItem('city', JSON.stringify(city))\r\n};\n\n//# sourceURL=webpack:///./src/js/localStorageJS/localStorage.js?");
-
-/***/ }),
-
-/***/ 1:
-/*!**************************************************************************************************************************!*\
-  !*** multi (webpack)-dev-server/client?http://localhost:9000 (webpack)/hot/dev-server.js ./src/js/listPageJS/listDiv.js ***!
-  \**************************************************************************************************************************/
+/***/ 3:
+/*!***************************************************************************************************************************!*\
+  !*** multi (webpack)-dev-server/client?http://localhost:9000 (webpack)/hot/dev-server.js ./src/js/contactsJS/contacts.js ***!
+  \***************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("__webpack_require__(/*! C:\\Users\\Admin\\Desktop\\FrontEnd\\Practica\\HomeWork\\JS12Webpack\\node_modules\\webpack-dev-server\\client\\index.js?http://localhost:9000 */\"./node_modules/webpack-dev-server/client/index.js?http://localhost:9000\");\n__webpack_require__(/*! C:\\Users\\Admin\\Desktop\\FrontEnd\\Practica\\HomeWork\\JS12Webpack\\node_modules\\webpack\\hot\\dev-server.js */\"./node_modules/webpack/hot/dev-server.js\");\nmodule.exports = __webpack_require__(/*! ./src/js/listPageJS/listDiv.js */\"./src/js/listPageJS/listDiv.js\");\n\n\n//# sourceURL=webpack:///multi_(webpack)-dev-server/client?");
+eval("__webpack_require__(/*! C:\\Users\\Admin\\Desktop\\FrontEnd\\Practica\\HomeWork\\JS12Webpack\\node_modules\\webpack-dev-server\\client\\index.js?http://localhost:9000 */\"./node_modules/webpack-dev-server/client/index.js?http://localhost:9000\");\n__webpack_require__(/*! C:\\Users\\Admin\\Desktop\\FrontEnd\\Practica\\HomeWork\\JS12Webpack\\node_modules\\webpack\\hot\\dev-server.js */\"./node_modules/webpack/hot/dev-server.js\");\nmodule.exports = __webpack_require__(/*! ./src/js/contactsJS/contacts.js */\"./src/js/contactsJS/contacts.js\");\n\n\n//# sourceURL=webpack:///multi_(webpack)-dev-server/client?");
 
 /***/ })
 
