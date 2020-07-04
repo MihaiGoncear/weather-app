@@ -151,8 +151,12 @@ footer {
 .forecast__main {
   list-style: none;
   display: flex;
-  flex-flow: row nowrap; }
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20%; }
   .forecast__main ul {
+    text-align: center;
     list-style: none;
     margin: 2%; }
 
