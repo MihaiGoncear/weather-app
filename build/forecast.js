@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "c3ee0e21afcee565fbe1";
+/******/ 	var hotCurrentHash = "5be3cc56e2da696d1d10";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1253,7 +1253,19 @@ eval("var logLevel = \"info\";\n\nfunction dummy() {}\n\nfunction shouldLog(leve
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"fetchWeatherApi\", function() { return fetchWeatherApi; });\n/* harmony import */ var _forecastJS_forecastPageRender_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../forecastJS/forecastPageRender.js */ \"./src/js/forecastJS/forecastPageRender.js\");\n\r\n\r\nfunction fetchWeatherApi(cityName){\r\n    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=london&appid=b8b5407d289db4e2cbfa0f2bbc1a70ce&units=metric`)\r\n    .then(response => response.json())\r\n    .then(data => { \r\n        return data.list.filter((item, index) => {\r\n            if(index === 0) return item;\r\n            if((index + 3) % 8 === 0) return item;\r\n        })\r\n     })\r\n     .then(result => result.map(item => Object(_forecastJS_forecastPageRender_js__WEBPACK_IMPORTED_MODULE_0__[\"forecastRenderPage\"])(item)))\r\n};\n\n//# sourceURL=webpack:///./src/js/apiJS/apiForecast.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"fetchWeatherApi\", function() { return fetchWeatherApi; });\n/* harmony import */ var _forecastJS_forecastPageRender_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../forecastJS/forecastPageRender.js */ \"./src/js/forecastJS/forecastPageRender.js\");\n\r\n\r\nfunction fetchWeatherApi(cityName){\r\n    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=b8b5407d289db4e2cbfa0f2bbc1a70ce&units=metric`)\r\n    .then(response => response.json())\r\n    .then(data => { \r\n        return data.list.filter((item, index) => {\r\n            if(index === 0) return item;\r\n            if((index + 3) % 8 === 0) return item;\r\n        })\r\n     })\r\n     .then(result => result.map(item => Object(_forecastJS_forecastPageRender_js__WEBPACK_IMPORTED_MODULE_0__[\"forecastRenderPage\"])(item)))\r\n};\n\n//# sourceURL=webpack:///./src/js/apiJS/apiForecast.js?");
+
+/***/ }),
+
+/***/ "./src/js/commonJS/cityKeys.js":
+/*!*************************************!*\
+  !*** ./src/js/commonJS/cityKeys.js ***!
+  \*************************************/
+/*! exports provided: cities */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"cities\", function() { return cities; });\nconst cities =  {\r\n  none: {\r\n    url:\"https://www.vhv.rs/file/max/26/266366_city-skyline-png.png\",\r\n    name: \"--select--\",\r\n  },\r\n  chisinau: {\r\n    url: \"https://sx-content-labs.sixt.io/chisinau-city-header.jpg\",\r\n    name: \"Chisinau\",\r\n  },\r\n  london: {\r\n    url:\"https://images.unsplash.com/photo-1505761671935-60b3a7427bad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80\",\r\n    name: \"London\",\r\n  },\r\n  moscow: {\r\n    url: \"https://cdn.getyourguide.com/img/tour_img-1233054-98.jpg\",\r\n    name: \"Moscow\",\r\n  },\r\n  newYork: {\r\n    url: \"https://d12dkjq56sjcos.cloudfront.net/pub/media/wysiwyg/newyork/01-city-landing/New-York-Skyline-Big-Bus-Tours-Jan-2018.jpg\",\r\n    name: \"New York\",\r\n  },\r\n  paris: {\r\n    url: \"https://imgix.bustle.com/uploads/shutterstock/2019/9/19/a49124d9-5f62-47a5-b5ec-8dd3a3066b30-shutterstock-1420728554.jpg?w=970&h=546&fit=crop&crop=faces&auto=format&q=70&dpr=2\",\r\n    name: \"Paris\",\r\n  },\r\n}\n\n//# sourceURL=webpack:///./src/js/commonJS/cityKeys.js?");
 
 /***/ }),
 
@@ -1265,7 +1277,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _apiJS_apiForecast_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../apiJS/apiForecast.js */ \"./src/js/apiJS/apiForecast.js\");\n\r\n\r\nObject(_apiJS_apiForecast_js__WEBPACK_IMPORTED_MODULE_0__[\"fetchWeatherApi\"])()\r\n\n\n//# sourceURL=webpack:///./src/js/forecastJS/forecast.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _apiJS_apiForecast_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../apiJS/apiForecast.js */ \"./src/js/apiJS/apiForecast.js\");\n/* harmony import */ var _localStorageJS_localStorage_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../localStorageJS/localStorage.js */ \"./src/js/localStorageJS/localStorage.js\");\n/* harmony import */ var _commonJS_cityKeys_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../commonJS/cityKeys.js */ \"./src/js/commonJS/cityKeys.js\");\n\r\n\r\n\r\n\r\nlet myStorage = Object(_localStorageJS_localStorage_js__WEBPACK_IMPORTED_MODULE_1__[\"getCityFromLocalStorage\"])()\r\n\r\nif(myStorage) {\r\n    Object(_apiJS_apiForecast_js__WEBPACK_IMPORTED_MODULE_0__[\"fetchWeatherApi\"])(_commonJS_cityKeys_js__WEBPACK_IMPORTED_MODULE_2__[\"cities\"][myStorage].name)\r\n} else {\r\n    let h = document.createElement('h1')\r\n    h.innerText = 'Choose city from home Page'\r\n\r\n    document.body.append(h)\r\n}\r\n\r\n\n\n//# sourceURL=webpack:///./src/js/forecastJS/forecast.js?");
 
 /***/ }),
 
@@ -1278,6 +1290,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _api
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"forecastRenderPage\", function() { return forecastRenderPage; });\nfunction forecastRenderPage(info) {\r\n    console.log(info)\r\n\r\n    let mainDiv = document.getElementById('forecast__main')\r\n    mainDiv.setAttribute('class', 'forecast__main')\r\n\r\n    let forecastDiv = document.createElement('ul');\r\n    forecastDiv.setAttribute('class', 'forecast__main-list')\r\n\r\n\r\n    let firstListItem = document.createElement('li');\r\n    let secondListItem = document.createElement('li');\r\n    let thirdListItem = document.createElement('li');\r\n\r\n    let weatherTableDataThirdImg = document.createElement('img');\r\n    weatherTableDataThirdImg.setAttribute('src', `http://openweathermap.org/img/w/${info.weather[0].icon}.png`)\r\n    weatherTableDataThirdImg.setAttribute('alt', info.weather[0].description)\r\n    \r\n    firstListItem.innerText = info.dt_txt\r\n    secondListItem.append(weatherTableDataThirdImg) \r\n    thirdListItem.innerText = info.main.temp\r\n\r\n    forecastDiv.append(firstListItem)\r\n    forecastDiv.append(secondListItem)\r\n    forecastDiv.append(thirdListItem)\r\n\r\n    mainDiv.append(forecastDiv)\r\n\r\n}\n\n//# sourceURL=webpack:///./src/js/forecastJS/forecastPageRender.js?");
+
+/***/ }),
+
+/***/ "./src/js/localStorageJS/localStorage.js":
+/*!***********************************************!*\
+  !*** ./src/js/localStorageJS/localStorage.js ***!
+  \***********************************************/
+/*! exports provided: getCityFromLocalStorage, setCityToLocalStorage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getCityFromLocalStorage\", function() { return getCityFromLocalStorage; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"setCityToLocalStorage\", function() { return setCityToLocalStorage; });\nfunction getCityFromLocalStorage() {\r\n    return JSON.parse(localStorage.getItem('city'));\r\n};\r\n\r\nfunction setCityToLocalStorage(city) {\r\n    localStorage.setItem('city', JSON.stringify(city))\r\n};\n\n//# sourceURL=webpack:///./src/js/localStorageJS/localStorage.js?");
 
 /***/ }),
 
