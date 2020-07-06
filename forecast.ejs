@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Pangolin&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <title id="title" data-name="forecast">WeatherApp</title>
 </head>
 <body>
     <%- include header -%>
-    <main id="forecast__main"></main>
+    <main id="forecast__main">
+        <div class="forecast__main__div-title">
+            <h1>5 days Forecast</h1>
+        </div>
+        <div id="forecast__main-div"></div>
+    </main>
     <%- include footer -%>
 </body>
 </html>

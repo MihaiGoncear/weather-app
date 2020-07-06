@@ -4,9 +4,11 @@ export function forecastRenderPage(info) {
     let mainDiv = document.getElementById('forecast__main')
     mainDiv.setAttribute('class', 'forecast__main')
 
-    let forecastDiv = document.createElement('ul');
-    forecastDiv.setAttribute('class', 'forecast__main-list')
+    let forecastDiv = document.getElementById('forecast__main-div');
+    forecastDiv.setAttribute('class', 'forecast__main-div')
 
+    let forecastList = document.createElement('ul');
+    forecastList.setAttribute('class', 'forecast__main-list')
 
     let firstListItem = document.createElement('li');
     let secondListItem = document.createElement('li');
@@ -22,10 +24,11 @@ export function forecastRenderPage(info) {
     secondListItem.append(weatherTableDataThirdImg) 
     thirdListItem.innerHTML = `${Math.floor(info.main.temp)}<sup>°C</sup>`;
 
-    forecastDiv.append(firstListItem)
-    forecastDiv.append(secondListItem)
-    forecastDiv.append(thirdListItem)
+    forecastList.append(firstListItem)
+    forecastList.append(secondListItem)
+    forecastList.append(thirdListItem)
+
+    forecastDiv.append(forecastList)
 
     mainDiv.append(forecastDiv)
-
 }
