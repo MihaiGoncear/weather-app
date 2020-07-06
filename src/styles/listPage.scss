@@ -6,11 +6,13 @@
     .list__div {
         display: flex;
         justify-content: center;
+        align-items: center;
+        width: 100%;
+
         .city__table {
             width: 30%;
             background-color: rgba(149, 186, 255, 0.5);
             border: rgba(0, 76, 216, 0.801) 3px solid;
-            border-radius: 15%;
             border-collapse: collapse;
             
             tr{

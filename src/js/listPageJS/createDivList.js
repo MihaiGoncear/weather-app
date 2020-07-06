@@ -6,7 +6,9 @@ export function listDivViaApi(info) {
     let myStorage = getCityFromLocalStorage();
     let storageCity = cities[myStorage].name;
     
-    if(info.name === storageCity) return;
+    if(info.name === storageCity){
+        return
+    };
     
     let mainTag = document.getElementById('list__main');
     mainTag.classList.add('list__main')
@@ -21,11 +23,13 @@ export function listDivViaApi(info) {
     let weatherTableDataFirst = document.createElement('td');
     let weatherTableDataSecond = document.createElement('td');
     let weatherTableDataThird = document.createElement('td');
+    
+    
 
     let weatherTableDataThirdImg = document.createElement('img');
     weatherTableDataThirdImg.setAttribute('src', `http://openweathermap.org/img/w/${info.weather[0].icon}.png`)
     weatherTableDataThirdImg.setAttribute('alt', info.weather[0].description)
-
+     
     weatherTableDataFirst.innerText = info.name;
     weatherTableDataSecond.innerHTML = `${Math.floor(info.main.temp)}<sup>°C</sup>`;
     weatherTableDataThird.append(weatherTableDataThirdImg);
