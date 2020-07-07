@@ -4,14 +4,16 @@ import { cities } from "../commonJS/cityKeys.js"
 
 export function listDivViaApi(info) {
     let myStorage = getCityFromLocalStorage();
-    let storageCity = cities[myStorage].name;
-    
-    if(info.name === storageCity){
-        return
-    };
+
+    if(myStorage){
+        let storageCity = cities[myStorage].name;
+        
+        if(info.name === storageCity){
+            return
+        }
+    } 
     
     let mainTag = document.getElementById('list__main');
-    mainTag.classList.add('list__main')
     
     let mainDiv = document.getElementById('list__div')
 
